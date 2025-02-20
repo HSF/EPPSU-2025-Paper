@@ -34,43 +34,32 @@
 
 \section{Preamble}\label{preamble}
 
-Particle physics has an ambitious and broad global experimental
-programme for the coming decades. Large investments in building new
-facilities, future experiments and upgrading existing experiments are
-already underway (DUNE, HL-LHC) with other major projects, like FCC,
-under consideration. Scaling the present computing power and data
-storage needs by the foreseen increase in data rates in the next decade
-for HL-LHC is not sustainable within the current budget allocated for
-computing~\cite{CERN-LHCC-2022-005,Software:2815292}. As
-a result, a more efficient usage of computing resources is required in
-order to realise the physics potential of future data taking. A
-commensurate investment to hardware in the computing and software, used
-to acquire, manage, process, and analyse the vast amounts of data to be
-recorded, is absolutely critical. Software and computing are an integral
-component of experimental design, trigger and data acquisition,
-simulation, reconstruction, and analysis. They also underlie the
-simulation and design of future particle detectors and accelerators,
-along with related theoretical predictions.
+Particle physics has an ambitious and broad global experimental programme for
+the coming decades. Large investments in building new facilitie are already
+underway or under consideration. Scaling the present processing power and data
+storage needs by the foreseen increase in data rates in the next decade for
+HL-LHC is not sustainable within the current
+budgets~\cite{CERN-LHCC-2022-005,Software:2815292}. As a result, a more
+efficient usage of computing resources is required in order to realise the
+physics potential of future experiments. Software and computing are an integral
+part of experimental design, trigger and data acquisition, simulation,
+reconstruction, and analysis, as well as related theoretical predictions. A
+significant investment in computing and software is therefore critical
 
-Advances in software and computing, including artificial intelligence
-(AI) and machine learning (ML), will be key for solving the challenges
-associated with the data deluge and for enhancing the sensitivity of
-physics results. Making more use of accelerated computing devices, such
-as graphical processing units (GPUs), is a growing trend that has
-brought major benefits, as well as specific challenges. In addition, we
-must achieve a computing solution that makes efficient use of facilities
-(e.g., porting to ARM processors) and contributes to the reduction of
-the environmental footprint of HEP computing to give an environmentally
-sustainable solution~\cite{wlcgsust}. The
-HEP community already provided a roadmap for software and
-computing~\cite{hsfcwp} for the last
-EPPSU, and this paper updates that, with a focus on the most resource
-critical parts of our data processing chain.
+Advances in software and computing, including artificial intelligence (AI) and
+machine learning (ML), will be key for solving these challenges. Making better
+use of new processing hardware such as graphical processing units (GPUs) or ARM
+chips is a growing trend. This forms part of a computing solution that makes
+efficient use of facilities and contributes to the reduction of the
+environmental footprint of HEP computing~\cite{wlcgsust}. The HEP community
+already provided a roadmap for software and computing~\cite{hsfcwp} for the last
+EPPSU, and this paper updates that, with a focus on the most resource critical
+parts of our data processing chain.
 
 \section{Physics Event Generators}\label{physics-event-generators}
 
 Monte Carlo Event Generators (MCEGs) that simulate particle collisions,
-or ``events'', to a level that allows direct comparison with
+or `events', to a level that allows direct comparison with
 experimental data, are indispensable for the planning and analysis of
 past, current, and future experiments in particle physics. MCEGs bridge
 the chasm between relatively abstract theoretical ideas or calculations
