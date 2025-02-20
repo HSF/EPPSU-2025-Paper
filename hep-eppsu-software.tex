@@ -61,181 +61,132 @@ parts of our data processing chain.
 Monte Carlo Event Generators (MCEGs) that simulate particle collisions,
 or `events', to a level that allows direct comparison with
 experimental data, are indispensable for the planning and analysis of
-past, current, and future experiments in particle physics. MCEGs bridge
-the chasm between relatively abstract theoretical ideas or calculations
-and the often complex experimental reality. They provide inputs to
+all particle physics experiments. MCEGs bridge
+the chasm between theoretical ideas and calculations
+and experimental reality. They provide inputs to
 detailed software models of detectors, are key components in the
-evaluation of systematic uncertainties on measurements, and frequently
+evaluation of systematic uncertainties, and frequently
 play an essential role in the interpretation of those measurements.
 
-As such, the MCEGs buttress the continued success of the experimental
-programme through sustained improvements, responding to ever-increasing
-demands on their precision, reach, flexibility, and usability. The
-development, maintenance, validation and tuning of these central assets
-is driven in large part by a relatively small, but critically important,
-ecosystem of researchers. The ongoing physics exploration at the
-(HL-)LHC and other current experiments, and the preparation for future
-facilities, requires the continuation of this strategic and vibrant
-research programme at the interface of experiment, theory, and
-computation. This intersectionality of MCEG developers poses serious
+As such, the MCEGs buttress the continued success of the experimental programme
+through sustained improvements responding to ever-increasing demands on their
+precision, reach, flexibility, and usability. The development, maintenance,
+validation and tuning of these central assets is driven by a relatively small,
+but critically important, ecosystem of researchers. The ongoing physics
+exploration at the (HL-)LHC and other current experiments, and the preparation
+for future facilities, requires the continuation of this strategic and vibrant
+research programme. The intersectionality of MCEG developers poses serious
 challenges in terms of career paths and funding opportunities, and it is
-imperative that the particle physics community addresses such issues in
-order to ensure a sustainable development of MCEGs for existing and
-future facilities.
+imperative that the particle physics community addresses such issues to ensure a
+sustainable development of MCEGs for existing and future facilities.
 
 \subsection{Large Hadron Collider}\label{large-hadron-collider}
 
-The unprecedented precision in measuring the mass of the
-$mathrm{W}$
-boson~\cite{CMS:2024lrd} and related SM
-parameters at the LHC has ushered in a new era of collider physics, one
-defined by a deliberate focus on precision. With the large dataset
-expected to be collected at the High Luminosity LHC, theoretical
-precision needs to be at least of
-$\mathcal{O}~(1\%)$ (or even
-0.1\% for the top-quark mass for instance) and therefore necessitates
-the need for precise, accurate, and flexible event generators. High
-precision event generation will come at the cost of computing resources,
-which can be as high as 20\% of the total CPU budget of an
-experiment. Considerable R\&D is needed to mitigate the
-cost of higher precision. Significant challenges to be surmounted are
-outlined below, where although progress has been made, there is still
-work to be
+The unprecedented precision in measuring the mass of the $mathrm{W}$
+boson~\cite{CMS:2024lrd} and related SM parameters at the LHC illustrates the
+need for exceptional precision. With HL-LHC datasets, theoretical precision
+needs to be of $\mathcal{O}(1\%)$ (or even 0.1\% for the top-quark mass). This
+high precision event generation comes at the cost of computing resources, and
+can reach 20\% of the total CPU budget, so considerable R\&D is needed to
+ameliorate this. Significant challenges are outlined below and, although
+progress has been made, there is still work to be
 done~\cite{HSFPhysicsEventGeneratorWG:2020gxw,maltoni2022tf07snowmassreporttheory,10.21468/SciPostPhys.16.5.130}.
 
 \subsubsection{Reduction of negative weights in event
 generation}\label{reduction-of-negative-weights-in-event-generation}
 
 Events with negative weights can occur in MC schemes that include
-$\mathrm{N}^\mathrm{n}\mathrm{LO}$ corrections to cross sections, which can significantly dilute
-the statistical power of a sample. This statistical loss is most
-significant when MCEG predictions have to be propagated through the
-downstream steps of event reconstruction, which is computationally
-expensive. Positive
-resampling~\cite{Andersen:2020sjs} and
-cell resampling
-methods~\cite{Andersen:2021mvw} have been
-developed by the generator theory community. These methods redistribute
-weights without introducing bias, thereby significantly reducing the
-proportion of negative weights. Other methods include the
-MC@NLO-$\Delta$-scheme~\cite{Frederix:2020trv},
-which is a NLO-accurate matching prescription that reduces the number of
-negatively weighted events. All of these methods are currently being
-tested within the ATLAS and CMS collaborations and net gains arising
-from these techniques remain to be seen.
+$\mathrm{N}^\mathrm{n}\mathrm{LO}$ corrections to cross sections and can
+significantly dilute the statistical power of a sample. This statistical loss is
+most significant events have to be propagated through the downstream steps,
+which are computationally expensive. Positive resampling~\cite{Andersen:2020sjs}
+and cell resampling methods~\cite{Andersen:2021mvw} have been developed by the
+generator theory community -- these methods redistribute weights, without
+introducing bias, thereby significantly reducing the proportion of negative
+weights. Other methods include the
+MC@NLO-$\Delta$-scheme~\cite{Frederix:2020trv}, an NLO-accurate matching
+prescription that reduces the number of negatively weighted events. All of these
+methods are currently being tested by ATLAS and CMS.
 
 \subsubsection{Heterogeneous computing}\label{heterogeneous-computing}
 
-Matrix element calculations, which are usually the most CPU intensive
-part of higher order MCEG computations, can be offloaded to GPUs. The
-first benchmarking of the gains from using the GPU version of
-Madgraph~\cite{Alwall:2014hca,MadgraphOnGPU}
-for leading-order calculations was performed by the CMS Collaboration
-(Ref.~\cite{CMS-DP-2024-086}) and showed
-marked improvement, up to a factor of seven in event generation time.
-The PEPPER (Portable Engine for the Production of Parton-level Event
-Records)~\cite{Bothmann:2023gew} event
-generator, developed by the Sherpa generator
-team~\cite{Sherpa:2019gpd} parallelizes
-the entire parton level event generation and has been tested across a
-wide range of GPU architectures. Additionally, HDF5 format for LHE files
-and HepMC format to interface to traditional parton shower generators on
-CPUs like Sherpa and Pythia are available. The benchmarking exercises
-performed by experimental collaborations are still in their nascent
-stages, with the eventual goal being that event generators will be run
-on GPUs during MC production campaigns producing tens of billions of
-events.
+Matrix element calculations, which are usually the most CPU intensive part of
+higher order MCEG computations, can be offloaded to GPUs. The first benchmarking
+of the gains from using the GPU version of
+Madgraph~\cite{Alwall:2014hca,MadgraphOnGPU} for leading-order calculations was
+performed by the CMS Collaboration~\cite{CMS-DP-2024-086}) and showed
+improvement up to $\times 7$ in event generation time. The PEPPER (Portable
+Engine for the Production of Parton-level Event Records)~\cite{Bothmann:2023gew}
+event generator, developed by the Sherpa generator team~\cite{Sherpa:2019gpd}
+parallelizes the entire parton level event generation and has been tested across
+a wide range of GPU architectures. The benchmarking exercises performed by
+experiments are still in nascent stages, with the eventual goal that event
+generators will be run on GPUs during MC huge production campaigns.
 
 \subsubsection{Use of ML in event generation}
 \label{use-of-ml-in-event-generation}
 
-Neural networks can be used to approximate matrix elements and have been
-studied in the context of loop-induced diphoton-plus-jets production
-through gluon
-fusion~\cite{Moodie:2022flt}. Such
-innovative approaches to event generation can reduce the computation
-time by at least on order of magnitude. ML based hadronization models,
-trained with conditional sliced-Wasserstein autoencoder, that can
-replicate the performance of the Pythia-8 generator for certain
-kinematic distributions have been
-developed~\cite{Ilten:2022jfm,
-Bierlich:2023fmh}. These ML models offer the possibility of being
-directly built from data and can provide insights into phenomenological
-models currently in use. Employing ML based reweighting techniques can
-alleviate the problem of generating MC samples for several systematic
-variations, which is a source of inefficiency in the current LHC
-workflows. Instead of generating multiple samples, only one sample with
-weights representative of each systematic variation can be then
+Neural networks can be used to approximate matrix elements and have been studied
+in the context of loop-induced diphoton-plus-jets production through gluon
+fusion~\cite{Moodie:2022flt}. Such approaches to event generation can reduce the
+computation time by up to $\times 10$. ML based hadronization models that can
+replicate the performance of the Pythia 8 generator for certain kinematic
+distributions have been developed~\cite{Ilten:2022jfm, Bierlich:2023fmh}. These
+ML models offer the possibility of being directly built from data, so can
+provide insights into phenomenological models currently in use. Employing ML
+based reweighting techniques can alleviate the problem of generating MC samples
+for several systematic variations -- instead of generating multiple samples,
+only one sample with weights representative of each systematic variation can be
 sufficient~\cite{CMS:2024jdl}.
 
 \subsection{Higgs/Top/Electroweak factories aka Higgs
 Factories}\label{higgstopelectroweak-factories-aka-higgs-factories}
 
-In addition to general purpose generators, LEP-era generators, which
-were more specialized to certain processes, have been updated
-(KKMCee~\cite{Jadach:1999vf},
-Babayaga~\cite{CarloniCalame:2003yt},
-BHLumi~\cite{Jadach:1991by},
-RacoonWW~\cite{Denner:2000bj}) and several
-have moved from Fortran to
-C++~\cite{Jadach:2022mbe}. Modern
+In addition to general purpose generators, LEP-era generators, which were more
+specialized to certain processes, have been
+updated~\cite{Jadach:1999vf,CarloniCalame:2003yt,Jadach:1991by,Denner:2000bj}
+and several have moved from Fortran to C++~\cite{Jadach:2022mbe}. Modern
 generators that have been developed for LHC physics can extend their
-capabilities to electron-positron collisions due to their process
-independent algorithms, not only for the Standard Model, but also for
-BSM models. Additionally specialized tools, e.g., providing luminosity
-spectra (CIRCE)~\cite{Ohl:1996fi}
-based on the calculations of Guinea
-Pig~\cite{Schulte:1998au}, are being
-developed. The interface and validation of such tools is crucial for the
-physics program of future Higgs factories. In addition, the technical
-precision of the LEP-era Monte-Carlos have not all been
-adapted by the general purpose Monte Carlo programs, and this
-implementation and validation will be of a high priority.
+capabilities to $e^+e^-$ collisions due to their process independent algorithms,
+not only for the Standard Model, but also for BSM models. Specialised tools,
+e.g., providing luminosity spectra~\cite{Ohl:1996fi}, are being developed. The
+interface and validation of such tools, as well as adapting the general purpose
+Monte Carlo programs to the precision of LEP era MCEGs, is crucial for the
+physics program of future Higgs factories  .
 
-The expected high precision of the measurements at a Higgs factory poses
-tremendous challenges for the Monte Carlo generators. It will be
-mandatory that all processes are known to at least NNLO EW, and for some
-processes, such as Bhabha scattering, even N\textsuperscript{3}LO
-EW~\cite{ECFAHiggsStudy:2025}, which will
-require the development of new efficient algorithms to automate the
-calculation of these radiative corrections. These fixed-order
-corrections must also be supplemented with all-order resummation
-methods, which will remove potentially large logs. Currently, the
-electron parton distribution function (PDF) at LL and NLL order is
-known, which must be matched to an exclusive description of the photon
-phase space, such as a parton shower, to at least
-NNLL\textasciitilde c\textbackslash ite{ECFAHiggsStudy:2025,Bertone:2019hks,Frixione:2019lga}.
-Such universally applicable matching formalism between fixed-order and
-resummed calculations with exclusive radiation simulations and QED
-showers is needed to achieve per-mil precision for both inclusive and
-exclusive
-predictions~\cite{Frixione:2022ofv}. A
-complementary approach is the Yennie-Frautschi-Suura (YFS) resummation,
-which was crucial to the LEP physics programme as it was the main
-approach of the Krakow MC such as
-KKMC~\cite{Jadach:1999vf}, in which both
-the order by order perturbative improvements and resummation of soft
-logarithms is achieved in one method. This method has been implemented
-in process independent fashion in
-Sherpa~\cite{Krauss:2022ajk} as an example
-of how state of the art predictions from the LEP era can benefit from
-technical advances of the LHC MC tools.
+The high precision measurements at a Higgs factory poses tremendous challenges.
+It will be mandatory that all processes are known to at least NNLO EW, and for
+some processes, such as Bhabha scattering, even N\textsuperscript{3}LO
+EW~\cite{ECFAHiggsStudy:2025}, which will require the development of new
+efficient algorithms to automate the calculation of these radiative corrections.
+These fixed-order corrections must also be supplemented with all-order
+resummation methods. Currently, the electron parton distribution function (PDF)
+at LL and NLL order is known, which must be matched to an exclusive description
+of the photon phase space, such as a parton shower, to at least
+NNLL~\cite{ECFAHiggsStudy:2025,Bertone:2019hks,Frixione:2019lga}. Such
+universally applicable matching formalism between fixed-order and resummed
+calculations with exclusive radiation simulations and QED showers is needed to
+achieve per-mil precision for inclusive and exclusive
+predictions~\cite{Frixione:2022ofv}. A complementary approach is the
+Yennie-Frautschi-Suura (YFS) resummation, which was crucial to the LEP physics
+programme as it was the main approach KKMC~\cite{Jadach:1999vf}, in which both
+the order-by-order perturbative improvements and resummation of soft logarithms
+is achieved in one method. This method has been implemented in process
+independent fashion in Sherpa~\cite{Krauss:2022ajk}, as an example of how state
+of the art predictions from the LEP era can benefit from technical advances in
+LHC MC tools.
 
 Specialized tools are necessary for specific processes, e.g., luminosity
 determination (BHLumi, Babayaga), top threshold. Further
-developments/calculations are needed to reach the required accuracy. As
-for the LHC, phase-space sampling is being improved with adaptive
-multi-channel versions of VEGAS or machine-learning methods. In
-heterogeneous computing a part of the simulation is performed on CPU and
-parts are off-loaded to GPUs. All such developments which have been
-applied to the LHC program will naturally be applicable to Higgs
-factories.
+developments/calculations are needed to reach the required accuracy. Phase-space
+sampling is being improved with adaptive multi-channel versions of VEGAS or
+machine-learning methods, and can utilise GPUs.
 
-Since the last EPPSU, the Key4hep software ecosystem has emerged as a
+Since the last EPPSU, the Key4hep~\cite{Ganis2022} software ecosystem has emerged as a
 common framework supported by and supporting all Higgs factory proposals
-(FCC, CLIC, ILC, CEPC) but also the Muon collider and
+(FCC, CLIC, ILC, CEPC), and also the Muon collider and
 Electron-Ion-Collider. It provides coherent interfaces to many
-generators. This enables meaningful systematic comparisons of cross
+generators enabling meaningful systematic comparisons of cross
 sections, differential distributions and more. Furthermore, scripts to
 generate events in the Key4hep ecosystem are provided that are of huge
 utility to the community. As well as continued support for Key4hep, an
@@ -245,41 +196,36 @@ by each generator individually.
 
 \subsection{Hyper-K and DUNE}\label{hyper-k-and-dune}
 
-In the neutrino community, high-quality event generators are a critical
-need for next-generation analyses, particularly those pursued by the
-accelerator neutrino oscillation experiments Hyper-Kamiokande (Hyper-K)
-and the Deep Underground Neutrino Experiment (DUNE). Achieving their
-physics goals, e.g., to make definitive measurements of neutrino and SM
-properties, will require unprecedented percent-level control of
-systematic uncertainties, including those related to simulations of
-neutrino-nucleus interactions. These interaction uncertainties, which
-arise to mitigate event generator mismodeling, are particularly
-difficult to reduce to the required level because of stringent
-theoretical demands: full final states must be predicted over orders of
-magnitude in neutrino energy for multiple targets, and the various
-interaction modes that contribute are each subject to complicated
-nuclear effects. Delivering the simulation capability to allow Hyper-K
-and DUNE to be successful will thus require advances in nuclear theory,
-as well as corresponding investment in development and maintenance of
-the neutrino event generators.
+In the neutrino community, high-quality event generators are a critical need for
+next-generation analyses, particularly those pursued by the accelerator neutrino
+oscillation experiments Hyper-Kamiokande (Hyper-K) and the Deep Underground
+Neutrino Experiment (DUNE). To make definitive measurements of neutrino and SM
+properties requires unprecedented percent-level control of systematic
+uncertainties, including those related to simulations of neutrino-nucleus
+interactions. These interaction uncertainties, which arise to mitigate event
+generator mismodeling, are particularly difficult to reduce to the required
+level because of stringent theoretical demands: full final states must be
+predicted over orders of magnitude in neutrino energy for multiple targets, and
+the various interaction modes that contribute are each subject to complicated
+nuclear effects. Delivering the simulation capability to allow Hyper-K and DUNE
+to be successful will thus require advances in nuclear theory, as well as
+corresponding investment in development and maintenance of the neutrino event
+generators.
 
-Although neutrino event generators are at an earlier stage of
-development and supported by a smaller workforce, there are many
-challenges shared with simulation efforts in collider experiments and
-other branches of HEP~\cite{2203.11110}.
-There are obstacles rather specific to the neutrino community that must
-be overcome. As well as open questions in HEP motivating development,
-the field is heavily reliant upon nuclear research, which is often
-funded for other applications. Technical barriers already solved for the
-LHC still remain an issue for the neutrino community due to a lack of
-dedicated effort. It is difficult for experiments to use multiple
-neutrino event generators because there is no common event format
-(although one has recently been proposed~\cite{2310.13211})
-and no standardized interfaces for related software. Implementation of
-new models also typically remains very labour intensive, with adaptation
-of LHC techniques for streamlining the work only just beginning~\cite{https://doi.org/10.1103/PhysRevD.105.096006}.
-Supporting the wide variety of new physics searches envisioned for
-future experiments, will, in particular, require novel approaches.
+Although neutrino event generators are at an earlier stage of development and
+supported by a smaller workforce, there are many challenges shared with
+simulation efforts in collider experiments and other branches of
+HEP~\cite{2203.11110}. Specific obstacles to the neutrino community must also be
+overcome. The field is heavily reliant upon nuclear research, which is often
+funded for other applications. Technical barriers already solved for the LHC
+still remain an issue for the neutrino community due to a lack of dedicated
+effort. E.g., there is no common event format (although one has 
+been proposed~\cite{2310.13211}) and no standardised interfaces for related
+software. Implementation of new models also typically remains very labour
+intensive, with adaptation of LHC techniques for streamlining the work only just
+beginning~\cite{https://doi.org/10.1103/PhysRevD.105.096006}. Supporting the
+wide variety of new physics searches envisioned for future experiments, will, in
+particular, require novel approaches.
 
 \subsection{Recommendations}\label{recommendations}
 
