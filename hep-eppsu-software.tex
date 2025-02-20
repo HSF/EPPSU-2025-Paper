@@ -11,6 +11,9 @@
 \usepackage[titletoc]{appendix}
 \usepackage{xspace}
 
+\usepackage{enumitem}
+\setlist{nosep}
+
 \usepackage[utf8]{inputenc}
 
 %\usepackage[style=numeric-comp,sorting=none]{biblatex}
@@ -115,7 +118,7 @@ done~\cite{HSFPhysicsEventGeneratorWG:2020gxw,maltoni2022tf07snowmassreporttheor
 generation}\label{reduction-of-negative-weights-in-event-generation}
 
 Events with negative weights can occur in MC schemes that include
-$\text{N}^\text{n}\text{LO}$ corrections to cross sections, which can significantly dilute
+$\mathrm{N}^\mathrm{n}\mathrm{LO}$ corrections to cross sections, which can significantly dilute
 the statistical power of a sample. This statistical loss is most
 significant when MCEG predictions have to be propagated through the
 downstream steps of event reconstruction, which is computationally
@@ -154,8 +157,8 @@ stages, with the eventual goal being that event generators will be run
 on GPUs during MC production campaigns producing tens of billions of
 events.
 
-\subsubsection{\texorpdfstring{Use of ML in event generation
-}{Use of ML in event generation }}\label{use-of-ml-in-event-generation}
+\subsubsection{Use of ML in event generation}
+\label{use-of-ml-in-event-generation}
 
 Neural networks can be used to approximate matrix elements and have been
 studied in the context of loop-induced diphoton-plus-jets production
