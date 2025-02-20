@@ -237,14 +237,13 @@ recommendations are made:
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  Funding of the generator theory community, especially fellowships for
-  students via the MCGen, MCNet or similar programs; and ensuring expert
-  continuity by rewarding multi-year work on computational aspects of
+  Generator theory community funding, including fellowships for students, and
+  ensuring expert continuity by rewarding work on computational aspects of
   generators with secure positions.
 \item
-  Supporting workshops (cite Nov LPCC and neg-weights) on specific
-  aspects of MC production that help bridge the gap between theory and
-  experiment and provide travel awards for early career scientists.
+  Supporting workshops on specific aspects of MC production that help bridge the
+  gap between theory and experiment and provide travel awards for early career
+  scientists.
 \item
   Support for developments of Higgs factory event generators and the
   Key4hep ecosystem to bring together Monte Carlo generators and
@@ -259,113 +258,94 @@ recommendations are made:
 
 As the volume of data collected by high energy experiments increases, so
 does the need for large, accurate Monte Carlo datasets. The simulation
-of the particle propagation in the detectors and the response of readout
-channels is a major component of experiment computing budgets.
+of the particle propagation in the detectors, and the response of readout
+channels, is a major component of experiment computing budgets.
 
 \subsection{Baseline Simulation Code
 Needs}\label{baseline-simulation-code-needs}
 
-Almost every HEP experiment uses the Geant4 {[}g4{]} simulation toolkit.
-Its development and maintenance over the long lifetimes of the
-experiments are of critical importance and need to be supported.
-Development of the physics models in Geant4 is driven by the needs of
-experiments using the toolkit. The increasingly higher intensity and
-luminosity require more precision, as does the use of higher granularity
-calorimeters. The main ongoing
-developments~\cite{g4inputs} are the
-implementation of more detailed EM models and rarer processes, the
-inclusion of low energy nuclear physics effects, and the continued
-tuning of string models. The FLUKA.CERN {[}fluka.cern{]} hadronic
-physics codes have been made available as an option in Geant4, and use
-of MC generator codes for hadron interaction and decay processes is
-being explored. The validation of Geant4 physics against thin and thick
-target experimental data for each Geant4 release is essential. Fluka
-itself remains critical for radiation transport and shielding
-calculations and is being modernised in C++.
+Almost every HEP experiment uses the Geant4\cite{geant4} simulation toolkit. Its
+development and maintenance over the long timescales, driven by the needs of
+experiments using the toolkit, are of critical importance and need to be
+supported. Higher intensity and luminosity require more precision, as does the
+use of higher granularity calorimeters. The main ongoing
+developments~\cite{g4inputs} are the implementation of more detailed EM models
+and rarer processes, the inclusion of low energy nuclear physics effects, and
+the continued tuning of string models. The FLUKA.CERN {[}fluka.cern{]} hadronic
+physics codes have been made available as an option in Geant4, and use of MC
+generator codes for hadron interaction and decay processes is being explored.
+The validation of Geant4 physics against thin and thick target experimental data
+for each release is essential. And Fluka itself, which is being modernised to
+C++, remains critical for radiation transport and shielding calculations.
 
 The computing load from electronics simulation and pileup overlay in the
 digitisation step is heavily dependent on detector design and consumes
 significant computing for all LHC experiments. Re-use of background
 induced digitised output has been deployed by all of them.
 
-Since the last EPPSU {[}strategy{]}, most LHC experiments have
-transitioned their simulation applications to multi-threaded execution,
-supported by Geant4. ALICE uses sub-event parallelism, which is now
-being implemented in Geant4. Considerable efforts have been spent to
-modernize and optimise the code. For example, ATLAS and CMS have
-reported {[}atlas,cms{]} throughput increases of a factor 1.5 to 2 at
-negligible cost in physics accuracy since the beginning of Run 2, from
-improvements in their own code and in Geant4. This is a process that
-can, and must, continue.
+Since the last EPPSU {[}strategy{]}, most LHC experiments have transitioned
+their simulation applications to multi-threaded execution, supported by Geant4,
+and modernised their code. ALICE uses sub-event parallelism, which is now being
+implemented in Geant4. ATLAS and CMS have reported {[}atlas,cms{]} throughput
+increases of a factor 1.5 to 2 at negligible cost in physics accuracy since the
+beginning of Run 2, from improvements in their own code and in Geant4. This is a
+process that can, and must, continue.
 
 \subsection{Novel Computing
 Architectures}\label{novel-computing-architectures}
 
-Market trends favour computing using GPUs, which can be more energy
-efficient if used intensively, in addition to porting to more power
-efficient CPU architectures, such as ARM. There is thus considerable
-interest in running the compute intensive simulation of HEP experiments
-on GPU-CPU hybrid architectures. Because of the complexity of the
-hadronic physics processes, efforts are focusing on the calculation of
-EM processes on GPUs, which can be up to two thirds of the run time in
-HEP collider detector simulations. The AdePT {[}adept{]} and Celeritas
-{[}celeritas{]} projects, working with the experiments, have
-demonstrated the possibility to perform the EM part of simulations in
-simplified setups on GPUs in a fraction of the time needed on CPUs
-{[}add CHEP refs for A and C{]}, while simulating hadronic physics and
+Market trends favour computing using GPUs, which can be more energy efficient if
+used intensively, in addition to porting to more power efficient CPU
+architectures, such as ARM. There is thus considerable interest in running the
+compute intensive simulation on GPU-CPU hybrid architectures. Efforts are
+focusing on the calculation of EM processes on GPUs, which can be up to two
+thirds of the run time in HEP collider detector simulations. The AdePT
+{[}adept{]} and Celeritas {[}celeritas{]} projects, working with the
+experiments, have demonstrated the possibility to perform the EM part of
+simulations in simplified setups on GPUs in a fraction of the time needed on
+CPUs {[}add CHEP refs for A and C{]}, while simulating hadronic physics and
 processing experiment-specific energy deposits on CPUs. Bottlenecks,
-particularly in the geometry, have been identified that are being
-addressed by describing detector elements with surfaces, instead of the
-current solid approach. Further work is needed to integrate the
-GPU-based simulation modules into the experiment software frameworks,
-but the goal of using GPUs in the production of MC datasets for the
-major LHC experiments by the start of Run 4 appears within reach. The
-other leading candidate for GPU simulation is the simulation of optical
-photons, which is a computing bottleneck for LHCb and several Intensity
-Frontier and Dark Matter
-experiments~\cite{opticksCHEP}.
+particularly in the geometry, have been identified that are being addressed by a
+new surface geometry approach. Further work is needed to integrate GPU-based
+simulation modules into experiment software frameworks, but the goal of using
+GPUs for MC datasets for the major LHC experiments by the start of Run 4 appears
+within reach. The other leading candidate for GPU simulation is the simulation
+of optical photons, which is a computing bottleneck for LHCb and several
+Intensity Frontier and Dark Matter experiments~\cite{opticksCHEP}.
 
 \subsection{Fast Simulation}\label{fast-simulation}
 
-Since the last Strategy Update {[}strategy{]}, a variety of fast
-simulation techniques have been developed and used in the experiments'
-Monte Carlo production. Parametrised and generative machine learning
-(ML) approaches for calorimeter shower simulations are used (e.g.,
-{[}af3{]}), or planned to be used, in a substantial fraction of Monte
-Carlo production by ATLAS, CMS, and LHCb. The use of fast simulation is
-expected to increase in the next few years, with more applications
-transitioning from R\&D to production. More sophisticated ML methods,
-e.g.,
-INN~\cite{kim2021innmethodidentifyingcleanannotated},
-CFM~\cite{tong2024improvinggeneralizingflowbasedgenerative}
-are being explored as future alternatives to GANs. Fast simulation R\&D
-includes the generation of low level detector output, tracking with
-simplified geometry, fast inner detector simulation based on
-parametrized models (e.g., FATRAS used by
-ATLAS~\cite{fatras}) or using ML-methods,
-and the correction of fast simulation output to match detailed
-simulation training samples. ATLAS's FastChain tool combines fast
-tracking and fast calorimeter simulation in one workflow. CMS, LHCb, and
-ALICE are investigating the more radical approach of generating high
-level outputs used in physics analysis based on the event
-generators' output. These approaches avoid significant
-intermediate format storage. Since fast simulation techniques still need
-large, accurate simulation samples for training, they do not remove the
-need for the detailed and optimized particle tracking simulation, but
-they can reduce the total size of the simulated samples
+Since the last Strategy Update {[}strategy{]}, a variety of fast simulation
+techniques have been developed and used in the experiments' Monte Carlo
+production. Parametrised and generative machine learning (ML) approaches for
+calorimeter shower simulations are used (e.g., {[}af3{]}), or planned to be
+used, in a substantial fraction of Monte Carlo production by ATLAS, CMS, and
+LHCb. The use of fast simulation is expected to increase in the next few years,
+with more applications transitioning from R\&D to production. More sophisticated
+ML methods, e.g., INN~\cite{kim2021innmethodidentifyingcleanannotated},
+CFM~\cite{tong2024improvinggeneralizingflowbasedgenerative} are being explored.
+Fast simulation R\&D includes the generation of low level detector output,
+tracking with simplified geometry, fast inner detector simulation based on
+parametrized models (e.g., FATRAS used by ATLAS~\cite{fatras}) or using
+ML-methods, and the correction of fast simulation output to match detailed
+simulation training samples. ATLAS's FastChain tool combines fast tracking and
+fast calorimeter simulation in one workflow. CMS, LHCb, and ALICE are
+investigating the more radical approach of generating high level outputs for
+physics analysis based on the event generators' output, saving greatly on
+storage. Since fast simulation techniques still need large, accurate simulation
+samples for training, they do not remove the need for detailed particle tracking
+simulation, but they can reduce the total size of the simulated samples.
 
-Large experiments have dedicated fast simulation development teams, an
-approach that can obtain the best performance for a specific
-application, but smaller experiments cannot afford this level of
-specialisation. Public datasets for the training of fast simulation
-models have been provided by the experiments, and an
-experiment-independent framework to develop ML-based fast calorimeter
-simulation models has been developed in Geant4. The field is in rapid
-development and the balance between experiment-specific developments and
-the use of common code still needs to be found, but it is clear that the
-development of common frameworks and tools needs to be supported to make
-the best use of a limited pool of developers and avoid unnecessary
-duplication of efforts.
+Large experiments have dedicated fast simulation development teams, an approach
+that can obtain the best performance for a specific application, but smaller
+experiments cannot afford this level of specialisation. Public datasets for the
+training of fast simulation models have been provided by the experiments, and an
+experiment-independent framework to develop ML-based fast calorimeter simulation
+models has been developed in Geant4. The field is in rapid development and the
+balance between experiment-specific code and the common code still needs to be
+found, but it is clear that the development of common frameworks and tools needs
+to be supported to make the best use of a limited pool of developers and avoid
+unnecessary duplication of efforts.
 
 Fast simulation and ML-based approaches to mitigate the resource usage
 of the current pileup mixing approaches are being considered by ATLAS
@@ -378,31 +358,28 @@ different from those of the running experiments. Large samples are not
 usually required and it is important to be able to simulate many
 different design variations, so flexibility and ease of use are
 essential. Studies for detectors at proposed future colliders are using
-the common Key4hep {[}Key4hep{]} framework. Gaseous detector R\&D relies
-heavily on Garfield++ {[}garfield++{]} for detailed modeling of signal
+the common Key4hep~\cite{Ganis2022} framework. Gaseous detector R\&D relies
+heavily on Garfield++ {[}garfield++{]} for detailed modelling of signal
 formation. Long term support of these tools is critical.
 
-The FCC-ee experiments are expected to collect data sets of a size
-similar or larger than that of HL-LHC experiments. They will also
-perform precision measurements in a cleaner environment than hadron
-colliders, so simulation will need to be at least as fast, but also more
-accurate than during HL-LHC operation. The Muon Collider needs to handle
-a large background from beam muon decays, which requires the simulation
-of beam background to be overlaid with simulated collision events.
-FCC-hh experiments will need the extension of physics models used in
-hadronic interaction simulation to higher energy, as well as overlay of
-up to 1000 pileup events per signal event and thus huge event, and
-sample, sizes.
+The FCC-ee experiments should collect data sets similar or
+larger size than that of HL-LHC experiments. They will perform precision
+measurements in a cleaner environment than hadron colliders, so simulation
+needs to be at least as fast, but also more accurate than for the HL-LHC. The
+Muon Collider must handle a large background from beam muon decays, which
+requires beam background simulation to be overlaid with simulated collision
+events. FCC-hh experiments will need the extension of physics models used in
+hadronic interaction simulation to higher energy, as well as overlay of up to
+1000 pileup events per signal event and thus huge event, and sample, sizes.
 
 \subsection{Recommendations}\label{recommendations-1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  Improve the level of support for critical core simulation software
-  activities (Geant4 particle tracking codes), including improving the
-  fidelity of the physics models; and ensure a generational transition
-  before current experts retire as well.
+  Improve the level of support for critical core simulation software code in
+  Geant4, improving the fidelity and speed of physics models, and ensuring a
+  generational transition before current experts retire as well.
 \item
   Provide suitable long term funding to maintain new developments which
   come to fruition.
@@ -419,82 +396,70 @@ sample, sizes.
 \section{Reconstruction and Software
 Triggers}\label{reconstruction-and-software-triggers}
 
-LHCb {[}2{]} and CMS {[}3{]} are now successfully operating GPU farms
-for their Run 3 software trigger systems and ALICE {[}4{]} uses such a
-farm for calibration of the detectors
+LHCb {[}2{]} and CMS {[}3{]} are now successfully operating GPU farms for their
+Run 3 software trigger systems and ALICE {[}4{]} uses such a farm for
+calibration of the detectors and the compression of the real data. This
+effort has produced impressive, sustainable production software providing
+speed-ups, portability and vendor
+independence~\cite{ALICE:vendorunlockedITS,LHb:Allen,MathesP3MA2017}. The
+upgrade has enabled ALICE and LHCb to fully adopt real-time analysis strategies,
+discarding raw data in favour of highly compressed or reconstructed
+data. This reduces storage needs and meets baseline physics goals, demonstrating that
+online calibration and detector alignment in quasi real-time is possible. ATLAS
+{[}5{]} and CMS {[}6{]} have increased their bandwidth allocation for real-time
+analysis triggers in Run 3 by factors of 2 to 3, allowing them to
+collect up to an order of magnitude more physics events beyond
+baseline for low mass exotic particle resonance searches.
 
-and the compression of the recorded data. This effort has produced
-impressive sustainable production software providing speed-ups,
-portability and vendor
-independence~\cite{ALICE:vendorunlockedITS,LHb:Allen,MathesP3MA2017}.
-The upgrade has enabled ALICE and LHCb to fully adopt real-time analysis
-strategies, discarding recording of raw data in favour of highly
-compressed or reconstructed data to reduce storage needs and meet
-baseline physics goals, demonstrating that online calibration and
-detector alignment in quasi real-time is possible. ATLAS {[}5{]} and CMS
-{[}6{]} have increased their bandwidth allocation for real-time analysis
-triggers in Run 3 by factors of 2 to 3, presently allowing them to
-collect up to an order of magnitude more physics events beyond their
-physics baseline program for low mass exotic particle resonance
-searches.
+The need for faster reconstruction and data processing algorithms is being
+widely addressed by ML and AI algorithms. AI tools are already used extensively
+in HEP offline software and are increasingly found in online software as well as
+hardware DAQ systems. For example, ATLAS uses, and continuously improves, graph
+neural networks based heavy flavour jet and tau identification in its high-level
+trigger (HLT) {[}7{]} in Run 3. CMS deployed a variational autoencoder based on
+an anomaly detection demonstrator in their Level-1 trigger in 2023 {[}8{]},
+making use of HLS4ML {[}9{]}, a HEP community-driven
+software package for high level synthesis of ML algorithms for FPGAs. In Run 3,
+LHCb has deployed monotonic Lipschitz networks at the HLT
+stage~\cite{LHCb:Lipschitz} to select heavy-flavour-quark decays in an efficient
+and robust way, as well as adding neural network models to their GPU HLT1 to
+improve track purity~\cite{neuralmodelHLT1LHCb}.
 
-The need for faster reconstruction and data processing algorithms is
-being widely addressed by ML and AI algorithms using industry-standard
-tools. AI tools are already used extensively in HEP offline software,
-such as for faster more efficient pile-up
-simulation~\cite{trackoverlay}, and are
-increasingly found in online software, thanks to a tighter integration
-with offline software, as well as hardware DAQ systems. For example,
-ATLAS uses and continuously improves Graph Neural Networks based heavy
-flavour jet and tau identification in its high-level trigger (HLT)
-{[}7{]} in Run 3. CMS deployed a variational autoencoder based on an
-anomaly detection demonstrator in their Level-1 trigger in 2023 {[}8{]},
-making use of HLS4ML {[}9{]}, an increasingly popular HEP
-community-driven software package for high level synthesis of ML
-algorithms for FPGAs. In Run 3, LHCb deployed monotonic Lipschitz
-networks at the HLT stage~\cite{LHCb:Lipschitz} to
-select heavy-flavor-quark decays in an efficient and robust way as well
-as adding neural network models to their GPU HLT1 to improve track
-ourity~\cite{neuralmodelHLT1LHCb}.
+Many experiments have recognised the compute intensive need for tracking
+capabilities in the trigger for improved event selection. Since Run 3, LHCb
+reconstructs tracks on GPU at the LHC bunch crossing rate, identifying quality
+particle candidates for offline analysis for every event~\cite{LHCb:HLT}, thus
+avoiding hardware-based first level trigger selections impacting its primary
+physics programme, such as measurements for CP violations in heavy flavoured
+hadron decays. Since Run 3, CMS is running on GPUs the track reconstruction
+based on the pixel detector data and is now poised to make a big advance at the
+HL-LHC by running tracking for particle flow reconstruction in a hardware-based
+first level trigger. The next important advancement will be 4D reconstruction,
+track reconstruction with the use of hit time information. This will be
+applicable at the HL-LHC and to future hadron, electron-positron, and deep
+inelastic scattering collider facilities for background mitigation. The tracking
+R\&D area has fostered the A Common Tracking Software (ACTS) project {[}10{]},
+an excellent example of a common software toolkit used by several experiments to
+tackle tracking challenges as a community. It is already proving a useful
+platform for common tools, such as traccc~\cite{traccc}, a demonstrator project
+for GPU-based tracking.
 
-Many experiments have acknowledged the compute intensive need for
-tracking capabilities in the trigger for improved event selection. For
-instance, since Run 3, LHCb reconstructs tracks on GPU at the LHC bunch
-crossing rate, identifying quality particle candidates for offline
-analysis for every event~\cite{LHCb:HLT},
-thereby avoiding hardware-based first level trigger selections impacting
-its primary physics programme such as measurements for CP violations in
-heavy flavoured hadron decays. Since Run 3, CMS is running on GPUs the
-track reconstruction based on the pixel detector data and is now poised
-to make a big advancement at the HL-LHC by running tracking for particle
-flow reconstruction in their hardware-based first level trigger. The
-next important advancement will be 4D reconstruction, that is track
-reconstruction with the use of hit time information. This will be
-applicable at the HL-LHC and to future hadron, electron-positron, and
-deep inelastic scattering collider facilities for background mitigation.
-The tracking R\&D area has fostered the A Common Tracking Software
-(ACTS) project {[}10{]}, an excellent example of a common software
-toolkit used by several HEP/NP experiments across the world to tackle
-tracking challenges as a community. It is already proving a useful
-platform for common tools, such as
-traccc~\cite{traccc}, a demonstrator
-project for GPU-based tracking.
+However, the rapidly evolving software landscape in HEP is highlighting a
+struggle to keep physicists sufficiently trained to contribute to reconstruction
+and trigger software in a useful way (e.g., C++ knowledge is hard to come by,
+these days). There is a growing need for a dedicated group of software and
+physics professionals working together. Improved robustness of production
+software leads to immense benefits and is a foundation for analysis
+preservation, as well as efficient and reliable, hence more sustainable,
+computing.
 
-However, the rapidly evolving software landscape in HEP is highlighting
-a struggle in keeping physicists sufficiently trained to contribute to
-reconstruction and trigger software in a useful way (e.g., C++ knowledge
-is hard to come by, these days). There is a growing need for a dedicated
-group of software and physics professionals working together.
-Fortunately, robust production software leads to immense benefits, such
-as a foundation for data analysis preservation in the near and far term,
-as well as efficient and reliable, hence more sustainable, computing.
+% That paragraph a bit out of place and not coherent - revise!
 
-The community has identified several key themes in reconstruction and
-software triggers that need to be intensively explored in the next
-decade in order to achieve the physics goals of future HEP experiments.
-Not all roadmap areas are relevant for every experiment, but we expect
-that the combined efforts in the proposed fields will broadly benefit
-future HEP programs.
+The community has identified several key themes in reconstruction and software
+triggers that need to be intensively explored in the next decade in order to
+achieve our physics goals. Not all roadmap areas are relevant for every
+experiment, but we expect that the combined efforts in the proposed fields will
+broadly benefit future HEP programs.
 
 \subsection{Enhanced heterogeneous computing
 software}\label{enhanced-heterogeneous-computing-software}
