@@ -448,95 +448,73 @@ However, the rapidly evolving software landscape in HEP is highlighting a
 struggle to keep physicists sufficiently trained to contribute to reconstruction
 and trigger software in a useful way (e.g., C++ knowledge is hard to come by,
 these days). There is a growing need for a dedicated group of software and
-physics professionals working together. Improved robustness of production
-software leads to immense benefits and is a foundation for analysis
-preservation, as well as efficient and reliable, hence more sustainable,
-computing.
-
-% That paragraph a bit out of place and not coherent - revise!
+physics professionals working together. Proper software engineering leads to
+immense benefits and is a foundation for analysis preservation, as well as
+efficient and reliable, hence more sustainable, computing.
 
 The community has identified several key themes in reconstruction and software
-triggers that need to be intensively explored in the next decade in order to
-achieve our physics goals. Not all roadmap areas are relevant for every
-experiment, but we expect that the combined efforts in the proposed fields will
-broadly benefit future HEP programs.
+triggers that need to be intensively explored in the next decade to achieve our
+physics goals. Not all areas are relevant for every experiment, but combined
+efforts in the proposed fields will broadly benefit future HEP programs.
 
 \subsection{Enhanced heterogeneous computing
 software}\label{enhanced-heterogeneous-computing-software}
 
-Given next generation data rates and physics demands, utilizing
-heterogeneous architectures such as GPUs and FPGAs appears inevitable in
-several different experimental use cases. One of the main challenges is
-anticipating the technological landscape in 5-10 years. While GPUs still
-seem one of the most promising accelerators, alternative accelerator and
-processor technologies, such as RISC-V, IPUs and AI-processors, have a
-rapid evolution rate and need to be closely monitored. At the same time,
-the community should aim to improve the flexibility of its
-reconstruction and software trigger software in order to explore and
-adapt to a variety of architectures, without being tied to a specific
-hardware vendor.
+Utilising heterogeneous architectures, such as GPUs and FPGAs, appears
+inevitable in several different areas. One of the main challenges is
+anticipating the technological landscape in 5-10 years. While GPUs are one of
+the most promising accelerators, alternative accelerator and processor
+technologies, such as RISC-V, IPUs and AI-processors, are evolving rapidly and
+need to be closely monitored. The community should aim to improve the
+flexibility of its software in order to explore and adapt to a variety of
+architectures, without being tied to a specific hardware vendor.
 
 \subsection{Real-time analysis}\label{real-time-analysis}
 
-The future for online data acquisition software in HEP and NP is
-trending towards operating triggerless or streaming readout data
-acquisition systems, to avoid online event selections otherwise limiting
-primary physics goals in this high precision era, including at the
-proposed FCC-ee. As rates increase, these techniques move to earlier in
-the acquisition chain, hosted in less flexible systems, which requires
-very careful system design, as well as operational models and validation
-to not compromise data quality. Selective persistency models will likely
-need to be further exploited to reduce storage pressure, along with
-tools for real-time detector calibration.
+Future online data acquisition software in HEP and NP trends towards operating
+triggerless or streaming readouts, to avoid online event selections that would
+limit primary physics goals. As rates increase, these techniques move to closer
+to the detector, hosted on less flexible systems, which requires very careful
+system design, as well as operational models and validation. Selective
+persistency models will likely need to be further exploited to reduce storage
+pressure, along with tools for real-time detector calibration.
 
 \subsection{Integration and support of AI/ML
 algorithms}\label{integration-and-support-of-aiml-algorithms}
 
-The community's interest in AI/ML solutions is rapidly increasing as
-they lend themselves well to low latency approaches for real-time
-analysis and fast data processing. Reaching the latency and throughput
-requirements in the lowest levels of the software trigger chains
-requires specialised expertise and therefore still poses a significant
-challenge and open source collaboration projects should be pursued
-further. The open source HLS4ML project (cite) for ML on FPGA for
-instance has provided physicists an easier, faster means of prototyping
-ML algorithms for FPGA together with the capability to generate bitwise
-correct C++ representations for simulation, whilst reducing the gap in
-firmware expertise.
+Interest in AI/ML solutions is rapidly increasing as they lend themselves well
+to low latency approaches for real-time analysis and fast data processing.
+Reaching the latency and throughput requirements at the lowest levels requires
+specialised expertise, posing a significant challenge and open source
+collaboration projects should be pursued further. E.g., the HLS4ML
+project~\cite{fastml_hls4ml,Duarte:2018ite} for ML on FPGA has provided an
+easier, faster means of developing ML algorithms for FPGAs, together with the
+capability to generate bitwise correct C++ representations for simulation,
+thus reducing the gap in firmware expertise.
 
 \subsection{Exploitation of precise timing in the reconstruction
 sequences}\label{exploitation-of-precise-timing-in-the-reconstruction-sequences}
 
-Many HEP experiments are planning, or have started to incorporate,
-precise timing (O(ps)) detectors, in order to maintain their performance
-in ultra-high density environments such as at Belle-II and experiment
-upgrades at the HL-LHC. For the HL-LHC and future colliders such as the
-FCC-hh, or Electron-Ion Collider using a streaming readout system,
-reconstruction techniques that use hit level timing (also known as 4D
-reconstruction) to more efficiently distinguish signal in the presence
-of higher background rates, is a powerful technique. Adapting
-reconstruction algorithms to keep pace with the rapid sensor and
-detector R\&D poses a significant challenge and requires community
-effort.
+Many HEP experiments are planning, or incorporating, precise timing
+($\mathcal{O}(\mathrm{ps})$) detectors, in order to maintain performance in
+ultra-high density environments (e.g., at Belle-II and HL-LHC). For the HL-LHC
+and future colliders, reconstruction techniques that use hit level timing
+(a.k.a.~4D reconstruction) can much more efficiently distinguish signal from
+background. Adapting reconstruction algorithms to keep pace with evolving sensor
+and detector R\&D is a significant challenge and requires community effort.
 
 \subsection{Enhanced software maintenance and Quality Assurance
 (QA)}\label{enhanced-software-maintenance-and-quality-assurance-qa}
 
-Addressing the aforementioned challenges while ensuring the integrity of
-physics results, will require increased efforts in maintaining validated
-online and offline reconstruction software frameworks. The principle
-will need to be extended across architectures, given the community's
-move towards heterogeneous systems. We stress that dedicated software
-development and maintenance roles are essential to achieve this and for
-which specific funding needs to be increased. We also highlight that
-common tools for continuous integration and automation of quality
-assurance tasks will ultimately conserve resources, as will identifying
-key software developments that are applicable to a wide range of
-experimental areas; common software can be more robustly tested and
-validated, whilst the benefits are shared by many. These recommendations
-will foster an environmentally sustainable software environment, yet at
-the same time increase computing efficiency to hopefully extract a
-larger wealth of physics data from accelerators.
+Maintaining validated online and offline reconstruction software frameworks is a
+significant challenge, especially with the move towards heterogeneous systems.
+Dedicated funding is essential to achieve this. Proper software engineering and
+common tools for continuous integration and automation of quality assurance
+tasks will ultimately conserve resources, as will identifying key software
+developments that are widely applicable. Common software can be more robustly
+tested and validated, with the benefits shared by many. This will foster an
+sustainable software environment and at the same time increase computing
+efficiency to improve physics reach.
 
 \subsection{Recommendations}\label{recommendations-2}
 
@@ -546,9 +524,9 @@ larger wealth of physics data from accelerators.
   Support R\&D in heterogeneous architectures along with the associated
   skill development.
 \item
-  Invest in further developments of real-time and streaming readout data
-  processing techniques with emphasis on reliability, to address growing
-  storage pressures in future ambitious HEP programs.
+  Invest in further development of real-time and streaming readout systems with
+  emphasis on reliability, to address growing storage pressures in future
+  ambitious HEP programs.
 \item
   Support ML/AI developments, in particular platforms for sharing ML/AI
   methods and tools specific to HEP applications and ML/AI
@@ -568,75 +546,68 @@ larger wealth of physics data from accelerators.
 
 \section{Data Analysis}\label{data-analysis}
 
-The data analysis software ecosystem, that is, the common frameworks,
-toolkits and packages typically employed in HEP data analysis, has
-generally migrated from C++ to a C++/Python hybrid over the last 10
-years. The increased prevalence of Python has been driven by usability
-benefits and changes in language preferences of physicists, with
-community initiatives such as Scikit-HEP {[}arXiv:2007.03577{]}
-promoting and consolidating Pythonic HEP analysis tools and the ``Python
-in HEP'' Developer's Workshop (PyHEP.dev) {[}arXiv:2410.02112{]}
-bringing together experts to form new collaborations. Typically, earlier
-stages of data analysis use C++ and later stages use Python as a ``glue
-language'' to steer frameworks such as ROOT. Further emphasis on
-interoperability and sustainability have encouraged many tools to
-implement/enhance their Python compatibility, e.g., through C++-Python
-wrappers, such as ROOT\textquotesingle s Python Interface. To overcome
-performance limitations, many Python packages have adopted an
-\emph{array programming} interface, where large arrays of data are
-passed into a compiled layer (often C++) for performance, focusing the
-Python portion of codebases to the task of dispatch and metadata
-manipulation. A recent addition to the community is a small but growing
-group of analysts employing Julia. Whilst not expected to become the
-mainstream in the immediate future, the significant performance benefits
-against Python and usability benefits against C++ make Julia an
-appealing language to many analysts.
+The data analysis software ecosystem, that is, the common frameworks, toolkits
+and packages typically employed in HEP data analysis, has generally migrated
+from pure C++ to a C++/Python hybrid over the last 10 years. The increased
+prevalence of Python has been driven by usability benefits and changes in
+language preferences of physicists, with community initiatives such as
+Scikit-HEP~\cite{Rodrigues_2020} promoting and consolidating Pythonic HEP
+analysis tools and the ``Python in HEP'' Developer's Workshop
+(PyHEP.dev)~\cite{alshehri2024pyhepdev2024workshopsummary} bringing together
+experts to form new collaborations. Typically, earlier stages of data analysis
+use C++ and later stages use Python as a ``glue language'' to steer frameworks
+such as ROOT. Further emphasis on interoperability and sustainability have
+encouraged many tools to implement/enhance their Python compatibility, e.g.,
+through C++-Python wrappers, such as ROOT's Python Interface. To overcome
+performance limitations, many Python packages have adopted an \emph{array
+programming} interface, where large arrays of data are passed into a compiled
+layer for performance, focusing the Python portion of codebases to the task of
+dispatch and metadata manipulation. A recent addition to the community is a
+small but growing group of analysts employing Julia. Whilst not expected to
+become the mainstream in the immediate future, the significant performance
+benefits against Python and usability benefits against C++ make Julia an
+appealing language.
 
-In parallel, data analysis frameworks are improving integration with
-computing infrastructure. The ROOT framework has developed the
+In parallel, data analysis frameworks are improving integration with computing
+infrastructure. The ROOT framework has developed the
 RDataFrame~\cite{10.1051/epjconf/201921406029} interface, with improved
 multithreading and interfaces to Spark~\cite{https://doi.org/10.1145/2934664}
 and Dask~\cite{doi:10.25080/Majora-7b98e3ed-013}, two popular distributed
-computing technologies. In the Scikit-HEP ecosystem, awkward-array~\cite{2001.06307}
-and Coffea~\cite{2008.12712} have closely integrated
-Dask to achieve scalability.
+computing technologies. In the Scikit-HEP ecosystem,
+awkward-array~\cite{2001.06307} and Coffea~\cite{2008.12712} have closely
+integrated Dask to achieve scalability.
 
-Given the wide range of tools available to HEP analysts,
-interoperability is a necessary requirement across the software
-ecosystem, with the need to build well-specified and interoperable data
-structures for all stages of analysis. The ROOT RNTuple data
+Given the wide range of tools available to HEP analysts, interoperability across
+the software ecosystem is necessary, with the need to build well-specified and
+interoperable data structures for all stages of analysis. The ROOT RNTuple data
 serialisation interface, replacing the TTree interface, has a clear
-specification as well as significant enhancements in support for
-multithreading and asynchronous I/O~\cite{https://doi.org/10.1051/epjconf/202429506020}.
-The HEP Statistics serialisation Standard (HS3) aims to provide a
-common, framework agnostic serialised description of the components
-involved in fitting statistical models (models, datasets, likelihoods,
-etc.)~\cite{https://github.com/hep-statistics-serialization-standard/hep-statistics-serialization-standard}.
+specification as well as significant enhancements in support for multithreading
+and asynchronous I/O~\cite{https://doi.org/10.1051/epjconf/202429506020}. The
+HEP Statistics serialisation Standard (HS3) aims to provide a common, framework
+agnostic serialised description of the components involved in fitting
+statistical models (models, datasets, likelihoods,
+etc.)~\cite{HS3github}.
 
 \subsection{Machine learning and automatic
 differentiation}\label{machine-learning-and-automatic-differentiation}
 
-Machine learning (ML) has become a core part of HEP data analysis.
-Traditionally, ML algorithms, such as decision trees and neural networks
-(NNs), are used to classify events, aggregating information to provide
-more efficient classification than rule-based algorithms. More recently,
-the use of ML in analysis has extended to statistical inference, with
-results from ATLAS~\cite{https://arxiv.org/pdf/2412.01548,https://arxiv.org/pdf/2412.01600}
+ML has had a transformative impact on HEP and become a core part of HEP data
+analysis. Traditionally, ML algorithms such as decision trees and neural
+networks (NNs), are used to efficiently classify events. More recently, the use
+of ML in analysis has extended to statistical inference, with results from
+ATLAS~\cite{https://arxiv.org/pdf/2412.01548,https://arxiv.org/pdf/2412.01600}
 using simulation-based inference, wherein ML classifiers are trained on
-simulation and used to construct statistics such as likelihood ratios
-which can be evaluated on data. ML remains a rapidly evolving field
-which has had a transformative impact on HEP and we expect it to keep
-playing a significant role in the future.
+simulation and used to construct statistics, such as likelihood ratios, which
+can be evaluated on data. We expect ML to keep playing a significant role in the
+future.
 
-Automatic differentiation (AD), techniques for the fast and precise
-computation of derivatives of functions, has potential to provide
-significant performance improvements across HEP analysis. Firstly, in
-statistical inference and fitting, where derivatives of functions are
-evaluated many times, AD has been shown to be significantly faster than
-existing methods, e.g., in the codegen backend in
-RooFit~\cite{Hageboeck:2020dyv}. In ML, AD
-plays a central role, e.g., in backpropagation in NN training. This
-helps to enable applications such as systematics-aware training of NNs.
+Automatic differentiation (AD), techniques for the fast and precise computation
+of derivatives of functions, has potential to provide significant performance
+improvements across HEP analysis. In statistical inference and fitting, where
+derivatives of functions are evaluated many times, AD has been shown to be
+significantly faster than existing methods, e.g., in the codegen backend in
+RooFit~\cite{Hageboeck:2020dyv}. AD also enables applications such as
+systematics-aware training of NNs.
 
 \subsection{Sustainable software development and
 analysis}\label{sustainable-software-development-and-analysis}
@@ -650,37 +621,34 @@ maintained by early career researchers, who are typically employed on
 fixed-term contracts of no more than a few years and for whom the time
 working on software is poorly recognised. Without direct support for,
 and recognition of, this work, packages can become insufficiently
-maintained to be useful to the community, an outcome with very negative
-impacts upon analysis, and by implication on the experiments' physics
+maintained to be useful to the community, with very negative
+impacts upon analysis, and, by implication, on the experiments' physics
 programmes and the future usability and preservation of results.
 
-In addition to the sustainable development of software, analysts are
-increasingly encouraged to make analyses and all related artefacts
+Analysts are increasingly encouraged to make analyses and all related artefacts
 findable, accessible, interoperable and reusable
-(FAIR)~\cite{fairguiding,Chen_2022,Duarte:2022job,Fair4AIWorkshop}.
-The expertise and tooling required for FAIR analyses has developed
-rapidly over recent years. In particular, developments in the domain of
-workflow management systems~\cite{cwl,snakemake,luigilaw,yadage} have enabled
-analysts to construct analyses in the form of structured workflows. The
-REANA reusable analysis platform~\cite{REANA} extends this to provide
-a data analysis platform from which to develop reusable analyses, with,
-e.g., a significant number of ATLAS analyses able to be used in this
-way. Additionally, increased functionality and user uptake of CI/CD
-systems provides analysts with tooling to ensure the integrity and
-reliability of analyses and software alike.
+(FAIR)~\cite{fairguiding,Chen_2022,Duarte:2022job,Fair4AIWorkshop}. The
+expertise and tooling required has developed rapidly over recent years. In
+particular, developments in the domain of workflow management
+systems~\cite{cwl,snakemake,luigilaw,yadage} have enabled analysts to construct
+analyses in the form of structured workflows. The REANA reusable analysis
+platform~\cite{REANA} extends this to provide a data analysis platform from
+which to develop reusable analyses. Increased functionality and user uptake of
+CI/CD systems provides tooling to ensure the integrity and reliability of
+analyses and software alike.
 
 \subsection{Analysis facilities and data analysis at
 scale}\label{analysis-facilities-and-data-analysis-at-scale}
 
-With the ever-increasing scale of data to be processed in HEP analyses,
-it is vital that analysts can employ large scale distributed computing
-resources. Analysis facilities (AFs) provide an approach to analysis
-infrastructure in which analysts can interface with these resources
-whilst also being able to prototype and execute their analyses
-interactively~\cite{AF WP}. Demonstrators such as the Analysis Grand
-Challenge initiative~\cite{https://doi.org/10.22323/1.414.0235}, in which physics analyses are performed to
-test the technologies which will be required for the HL-LHC, and many
-prototype AFs~\cite{AF pilot ref?} have shown promise in this model.
+With the ever-increasing scale of data to be processed in HEP analyses, it is
+vital that analysts can employ large scale distributed computing resources.
+Analysis facilities (AFs) provide an approach to analysis infrastructure in
+which analysts can interface with these resources whilst also being able to
+prototype and execute their analyses interactively~\cite{AF WP}. Demonstrators
+such as the Analysis Grand Challenge
+initiative~\cite{https://doi.org/10.22323/1.414.0235}, in which physics analyses
+are performed to test the technologies which will be required for the HL-LHC,
+and many prototype AFs~\cite{AF pilot ref?} have shown promise in this model.
 
 \subsection{Recommendations}\label{recommendations-3}
 
@@ -692,7 +660,7 @@ prototype AFs~\cite{AF pilot ref?} have shown promise in this model.
   R\&D lines.
 \item
   Ensure recognition and secure positions for the development of
-  analysis software and technical contributions, most notably when they
+  analysis software and supporting technical contributions that
   result in increased usability, efficiency and sustainability.
 \item
   Improve training and infrastructure to make our analyses FAIR.
@@ -702,75 +670,67 @@ prototype AFs~\cite{AF pilot ref?} have shown promise in this model.
 
 \subsection{Current Status}\label{current-status}
 
-Present day HEP experimental collaborations have users that vary from several
-hundreds to thousands. They have an internal structure and onboarding process to
-help new users learn and jumpstart software and physics analysis contributions.
-While most analysis tools and software frameworks taught are
-experiment-specific, a considerable amount of training is invested in common
-software tools and skills like Python, C++, Machine Learning, CI/CD, and
-analysis preservation and reproducibility, to name but a few. A community white
-paper~\cite{T4} reflected the growing consensus in the HEP community on the need
-for common training programs to bring researchers up to date with new software
-technologies. The Snowmass2021 process had community papers on Training and
-Community Engagement~\cite{5-7}. As a result, in the past 5 years the
-HSF~\cite{8}, together with Institute for Research and Innovation in Software
-for High Energy Physics (IRIS-HEP)~\cite{9}, CERN EP-SFT group and
-FIRST-HEP~\cite{10}, and partnering with The Carpentries~\cite{11}, and
-PyHEP~\cite{13} have focused on developing material for an introductory,
-intermediate and advanced HEP software curriculum~\cite{14} and teaching this
-curriculum to HEP users. In addition, several major computing and particle
-physics conferences have tracks on software training and corresponding efforts,
-which has been supported by the HSF. Other specific training efforts include
-CoDAS-HEP~\cite{15}, Bertinoro~\cite{16}, CERN School of Computing~\cite{17} and
-CERN OpenLab Software workshops~\cite{18}. Thus far, over 3000 users in HEP,
-related Nuclear Physics and computing areas have been trained. Current training
-work has also been published in journals and conference proceedings~\cite{19-21}.
+Present day HEP experimental collaborations have hundreds or thousands of users.
+They have internal structures and onboarding processes to help new users learn
+and jumpstart software and physics analysis contributions. While most analysis
+tools and software frameworks taught are experiment-specific, a considerable
+amount of training is invested in common software tools and skills like Python,
+C++, ML, CI/CD, and analysis preservation and reproducibility, etc. There is a
+growing consensus in the HEP community on the need for common training programs
+to bring researchers up to date with new software technologies~\cite{4-7}. As a
+result, in the past 5 years the HSF~\cite{8}, together with Institute for
+Research and Innovation in Software for High Energy Physics (IRIS-HEP)~\cite{9},
+CERN EP-SFT group and FIRST-HEP~\cite{10}, and partnering with The
+Carpentries~\cite{11}, and PyHEP~\cite{13} have developed material for an
+introductory, intermediate and advanced HEP software curriculum~\cite{14} taught
+to HEP users. In addition, several of our major conferences have tracks on
+software training and corresponding efforts. Other specific training efforts
+include CoDAS-HEP~\cite{15}, Bertinoro~\cite{16}, CERN School of
+Computing~\cite{17} and CERN OpenLab Software workshops~\cite{18}. Thus far,
+over 3000 users in HEP, related Nuclear Physics and computing areas have been
+trained. Current training work has also been published in journals and
+conference proceedings~\cite{19-21}.
 
 \subsection{Challenges and
 Opportunities}\label{challenges-and-opportunities}
 
-While a lot of progress has been made with respect to finding and
-establishing common training across HEP, several challenges still
-remain. Currently, each experiment may have its own training programs
-that are specific to the experiment's needs. But for HEP wide effort,
-committed funding sources for HEP have been lacking. A central
-organization like the HSF is needed to facilitate cooperation and engage
-people in common training efforts across HEP. Incentives and recognition
-are essential to be able to recruit mentors and tutors who invest time
-in training. Scalability and sustainability are key to achieve a steady
-state, where the scale of training activities match the number of
-incoming students each year. New opportunities, such as using Large
-Language Models, need to be investigated. Training scope and curriculum
-must meet the needs of the community and evolve over time as needed.
-This entails new instructors, and materials developers recruited and
-trained continuously to sustain the effort in the long run. Commitments
-from major HEP labs and experiments are required and they should see
-value and invest in not only core scientific goals but workforce
-training as well. Diversity and inclusion should be a guiding principle
-to develop the workforce pipeline and should engage the broader
-community that it represents.
+While a lot of progress has been made with respect to finding and establishing
+common training across HEP, several challenges still remain. Currently, each
+experiment may have its own training programs that are specific to the its
+needs, but for HEP wide effort, committed funding sources for HEP have been
+lacking. A central organization like the HSF is needed to facilitate cooperation
+and engage people in common training efforts. Incentives and recognition are
+essential to be able to recruit mentors and tutors who invest time in training.
+Scalability and sustainability are key to achieve a steady state, where the
+scale of training activities match the number of incoming students each year.
+New opportunities, such as using Large Language Models, need to be investigated.
+Training scope and curriculum must evolve to meet the needs of the community.
+New instructors, and materials developers recruited and trained continuously to
+sustain a long-term effort. Commitments from major HEP labs and experiments are
+required and they should see value and invest in workforce training. Diversity
+and inclusion should be a guiding principle to develop the workforce pipeline
+and should engage the broader community that it represents.
 
-The benefits of investing in training like this are considerable,
-directly for HEP and for supporting a set of broad interdisciplinary
-skills that help research software.
+The benefits of investing in training like this are considerable, directly for
+HEP and for supporting a set of broad interdisciplinary skills that help
+research software through, e.g., national and institutional research software
+engineer groups.
 
 \subsection{Career Support and
 Recognition}\label{career-support-and-recognition}
 
-For successful HEP computing, training provides a crucial step to
-recruit the future workforce. Most training is led by the early career
-researchers working at the cutting edge technology and who are trying to
-build a career. The current mindset favours visibility and recognition
-to those working on data analysis projects, or detector hardware, rather
-than those invested in software and computing. This must change if we
-want to meet future HEP computing challenges over decades and multiple
-experiments, which increasingly requires large and long lived software
-projects. We must~\cite{22} provide such opportunities for developers and
-provide a career path for those involved in software and computing,
-including in training, by creating job opportunities at labs and
-universities on par with those involved in detector construction. This
-must be supported by increased visibility like publications, conferences
-opportunities and overall recognising their contributions as valid
+For successful HEP computing, training provides a crucial step to recruit our
+future workforce and provide wide societal benefits. Most training is led by the
+early career researchers who are trying to build a career. The current mindset
+favours visibility and recognition of those working on data analysis projects or
+detector hardware rather than those invested in software and computing. This
+must change if we want to meet future challenges over decades and in multiple
+experiments, which increasingly requires large and long lived software projects.
+We must~\cite{22} provide such opportunities and provide a career path for those
+involved in software and computing, including in training, by creating job
+opportunities at labs and universities on par with those involved in detector
+construction. This must be supported by increased visibility like publications,
+conferences opportunities and recognition of these contributions as valid
 scientific accomplishments.
 
 \subsection{Recommendations}\label{recommendations-4}
