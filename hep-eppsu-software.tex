@@ -6,6 +6,8 @@
 \documentclass[10pt,a4paper]{article}
 \usepackage{jheppub}
 
+\notoc % No table of contents for this paper
+
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage[titletoc]{appendix}
@@ -26,11 +28,17 @@
 
 \begin{document}
 
+% This is the "free" page for title, authors, etc.
+
 \title{The Critical Importance of Software for HEP}
 
 \author{HEP Software Foundation and \dots}
 
 \maketitle
+
+% Start the main document on a new page
+
+\newpage
 
 \section{Preamble}\label{preamble}
 
@@ -44,7 +52,7 @@ efficient usage of computing resources is required in order to realise the
 physics potential of future experiments. Software and computing are an integral
 part of experimental design, trigger and data acquisition, simulation,
 reconstruction, and analysis, as well as related theoretical predictions. A
-significant investment in computing and software is therefore critical
+significant investment in computing and software is therefore critical.
 
 Advances in software and computing, including artificial intelligence (AI) and
 machine learning (ML), will be key for solving these challenges. Making better
@@ -152,11 +160,11 @@ not only for the Standard Model, but also for BSM models. Specialised tools,
 e.g., providing luminosity spectra~\cite{Ohl:1996fi}, are being developed. The
 interface and validation of such tools, as well as adapting the general purpose
 Monte Carlo programs to the precision of LEP era MCEGs, is crucial for the
-physics program of future Higgs factories  .
+physics program of future Higgs factories.
 
 The high precision measurements at a Higgs factory poses tremendous challenges.
-It will be mandatory that all processes are known to at least NNLO EW, and for
-some processes, such as Bhabha scattering, even N\textsuperscript{3}LO
+All processes have to be known to at least NNLO EW and
+some, such as Bhabha scattering, even N\textsuperscript{3}LO
 EW~\cite{ECFAHiggsStudy:2025}, which will require the development of new
 efficient algorithms to automate the calculation of these radiative corrections.
 These fixed-order corrections must also be supplemented with all-order
