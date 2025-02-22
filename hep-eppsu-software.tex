@@ -120,7 +120,8 @@ methods are currently being tested by ATLAS and CMS.
 Matrix element calculations, which are usually the most CPU intensive part of
 higher order MCEG computations, can be offloaded to GPUs. The first benchmarking
 of the gains from using the GPU version of
-Madgraph~\cite{Alwall:2014hca,MadgraphOnGPU} for leading-order calculations was
+Madgraph~\cite{Alwall:2014hca, Hageboeck:2023blb, Valassi:2022dkc, Wettersten:2023ekm}
+for leading-order calculations was
 performed by the CMS Collaboration~\cite{CMS-DP-2024-086}) and showed
 improvement up to $\times 7$ in event generation time. The PEPPER (Portable
 Engine for the Production of Parton-level Event Records)~\cite{Bothmann:2023gew}
@@ -222,15 +223,15 @@ generators.
 Although neutrino event generators are at an earlier stage of development and
 supported by a smaller workforce, there are many challenges shared with
 simulation efforts in collider experiments and other branches of
-HEP~\cite{2203.11110}. Specific obstacles to the neutrino community must also be
+HEP~\cite{campbell2024eg}. Specific obstacles to the neutrino community must also be
 overcome. The field is heavily reliant upon nuclear research, which is often
 funded for other applications. Technical barriers already solved for the LHC
 still remain an issue for the neutrino community due to a lack of dedicated
 effort. E.g., there is no common event format (although one has 
-been proposed~\cite{2310.13211}) and no standardised interfaces for related
+been proposed~\cite{gardiner2024nuhepmc}) and no standardised interfaces for related
 software. Implementation of new models also typically remains very labour
 intensive, with adaptation of LHC techniques for streamlining the work only just
-beginning~\cite{https://doi.org/10.1103/PhysRevD.105.096006}. Supporting the
+beginning~\cite{PhysRevD.105.096006}. Supporting the
 wide variety of new physics searches envisioned for future experiments, will, in
 particular, require novel approaches.
 
@@ -271,7 +272,8 @@ channels, is a major component of experiment computing budgets.
 \subsection{Baseline Simulation Code
 Needs}\label{baseline-simulation-code-needs}
 
-Almost every HEP experiment uses the Geant4\cite{geant4} simulation toolkit. Its
+Almost every HEP experiment uses the Geant4\cite{ALLISON2016187, 1610988, GEANT4:2002zbu}
+simulation toolkit. Its
 development and maintenance over the long timescales, driven by the needs of
 experiments using the toolkit, are of critical importance and need to be
 supported. Higher intensity and luminosity require more precision, as does the
@@ -290,7 +292,7 @@ digitisation step is heavily dependent on detector design and consumes
 significant computing for all LHC experiments. Re-use of background
 induced digitised output has been deployed by all of them.
 
-Since the last EPPSU {[}strategy{]}, most LHC experiments have transitioned
+Since the last EPPSU\cite{European:2720131}, most LHC experiments have transitioned
 their simulation applications to multi-threaded execution, supported by Geant4,
 and modernised their code. ALICE uses sub-event parallelism, which is now being
 implemented in Geant4. ATLAS and CMS have reported {[}atlas,cms{]} throughput
@@ -322,10 +324,10 @@ Intensity Frontier and Dark Matter experiments~\cite{opticksCHEP}.
 
 \subsection{Fast Simulation}\label{fast-simulation}
 
-Since the last Strategy Update {[}strategy{]}, a variety of fast simulation
+Since the last Strategy Update\cite{European:2720131}, a variety of fast simulation
 techniques have been developed and used in the experiments' Monte Carlo
 production. Parametrised and generative machine learning (ML) approaches for
-calorimeter shower simulations are used (e.g., {[}af3{]}), or planned to be
+calorimeter shower simulations are used (e.g. \cite{af3}), or planned to be
 used, in a substantial fraction of Monte Carlo production by ATLAS, CMS, and
 LHCb. The use of fast simulation is expected to increase in the next few years,
 with more applications transitioning from R\&D to production. More sophisticated
@@ -366,7 +368,7 @@ usually required and it is important to be able to simulate many
 different design variations, so flexibility and ease of use are
 essential. Studies for detectors at proposed future colliders are using
 the common Key4hep~\cite{Ganis2022} framework. Gaseous detector R\&D relies
-heavily on Garfield++ {[}garfield++{]} for detailed modelling of signal
+heavily on Garfield++\cite{garfield++} for detailed modelling of signal
 formation. Long term support of these tools is critical.
 
 The FCC-ee experiments should collect data sets similar or
@@ -403,17 +405,19 @@ hadronic interaction simulation to higher energy, as well as overlay of up to
 \section{Reconstruction and Software
 Triggers}\label{reconstruction-and-software-triggers}
 
-LHCb {[}2{]} and CMS {[}3{]} are now successfully operating GPU farms for their
-Run 3 software trigger systems and ALICE {[}4{]} uses such a farm for
+LHCb\cite{LHCb:RTDP} and CMS\cite{CMS:Detector_R3}
+are now successfully operating GPU farms for their
+Run 3 software trigger systems and ALICE\cite{ALICE:LS2_upgrades} uses such a farm for
 calibration of the detectors and the compression of the real data. This
 effort has produced impressive, sustainable production software providing
 speed-ups, portability and vendor
-independence~\cite{ALICE:vendorunlockedITS,LHb:Allen,MathesP3MA2017}. The
+independence~\cite{Concas:2024cyu, Aaij2020Allen,MathesP3MA2017}. The
 upgrade has enabled ALICE and LHCb to fully adopt real-time analysis strategies,
 discarding raw data in favour of highly compressed or reconstructed
 data. This reduces storage needs and meets baseline physics goals, demonstrating that
-online calibration and detector alignment in quasi real-time is possible. ATLAS
-{[}5{]} and CMS {[}6{]} have increased their bandwidth allocation for real-time
+online calibration and detector alignment in quasi real-time is possible.
+ATLAS\cite{ATLAS:trigger_LS3} and CMS\cite{CMS:enriching_phys_programs}
+have increased their bandwidth allocation for real-time
 analysis triggers in Run 3 by factors of 2 to 3, allowing them to
 collect up to an order of magnitude more physics events beyond
 baseline for low mass exotic particle resonance searches.
@@ -423,9 +427,10 @@ widely addressed by ML and AI algorithms. AI tools are already used extensively
 in HEP offline software and are increasingly found in online software as well as
 hardware DAQ systems. For example, ATLAS uses, and continuously improves, graph
 neural networks based heavy flavour jet and tau identification in its high-level
-trigger (HLT) {[}7{]} in Run 3. CMS deployed a variational autoencoder based on
-an anomaly detection demonstrator in their Level-1 trigger in 2023 {[}8{]},
-making use of HLS4ML {[}9{]}, a HEP community-driven
+trigger (HLT)\cite{ATLAS:perf_commissioning} in Run 3.
+CMS deployed a variational autoencoder based on
+an anomaly detection demonstrator in their Level-1 trigger in 2023\cite{CMS-DP-2023-079},
+making use of HLS4ML\cite{fastml_team_hls4ml}, a HEP community-driven
 software package for high level synthesis of ML algorithms for FPGAs. In Run 3,
 LHCb has deployed monotonic Lipschitz networks at the HLT
 stage~\cite{LHCb:Lipschitz} to select heavy-flavour-quark decays in an efficient
@@ -445,7 +450,7 @@ first level trigger. The next important advancement will be 4D reconstruction,
 track reconstruction with the use of hit time information. This will be
 applicable at the HL-LHC and to future hadron, electron-positron, and deep
 inelastic scattering collider facilities for background mitigation. The tracking
-R\&D area has fostered the A Common Tracking Software (ACTS) project {[}10{]},
+R\&D area has fostered the A Common Tracking Software (ACTS) project\cite{Ai2022Common},
 an excellent example of a common software toolkit used by several experiments to
 tackle tracking challenges as a community. It is already proving a useful
 platform for common tools, such as traccc~\cite{traccc}, a demonstrator project
@@ -577,11 +582,11 @@ appealing language.
 
 In parallel, data analysis frameworks are improving integration with computing
 infrastructure. The ROOT framework has developed the
-RDataFrame~\cite{10.1051/epjconf/201921406029} interface, with improved
-multithreading and interfaces to Spark~\cite{https://doi.org/10.1145/2934664}
-and Dask~\cite{doi:10.25080/Majora-7b98e3ed-013}, two popular distributed
+RDataFrame~\cite{ROOT:RDataFrame} interface, with improved
+multithreading and interfaces to Spark~\cite{10.1145/2934664}
+and Dask~\cite{matthew_rocklin-proc-scipy-2015}, two popular distributed
 computing technologies. In the Scikit-HEP ecosystem,
-awkward-array~\cite{2001.06307} and Coffea~\cite{2008.12712} have closely
+awkward-array~\cite{Pivarski_2020} and Coffea~\cite{Smith_2020} have closely
 integrated Dask to achieve scalability.
 
 Given the wide range of tools available to HEP analysts, interoperability across
@@ -589,7 +594,7 @@ the software ecosystem is necessary, with the need to build well-specified and
 interoperable data structures for all stages of analysis. The ROOT RNTuple data
 serialisation interface, replacing the TTree interface, has a clear
 specification as well as significant enhancements in support for multithreading
-and asynchronous I/O~\cite{https://doi.org/10.1051/epjconf/202429506020}. The
+and asynchronous I/O~\cite{ROOT:RDataFrame_prod_path}. The
 HEP Statistics serialisation Standard (HS3) aims to provide a common, framework
 agnostic serialised description of the components involved in fitting
 statistical models (models, datasets, likelihoods,
@@ -602,7 +607,7 @@ ML has had a transformative impact on HEP and become a core part of HEP data
 analysis. Traditionally, ML algorithms such as decision trees and neural
 networks (NNs), are used to efficiently classify events. More recently, the use
 of ML in analysis has extended to statistical inference, with results from
-ATLAS~\cite{https://arxiv.org/pdf/2412.01548,https://arxiv.org/pdf/2412.01600}
+ATLAS~\cite{ATLAS:2024_hzz_higgs, ATLAS:neural_sim_inference}
 using simulation-based inference, wherein ML classifiers are trained on
 simulation and used to construct statistics, such as likelihood ratios, which
 can be evaluated on data. We expect ML to keep playing a significant role in the
@@ -651,9 +656,9 @@ With the ever-increasing scale of data to be processed in HEP analyses, it is
 vital that analysts can employ large scale distributed computing resources.
 Analysis facilities (AFs) provide an approach to analysis infrastructure in
 which analysts can interface with these resources whilst also being able to
-prototype and execute their analyses interactively~\cite{AF WP}. Demonstrators
+prototype and execute their analyses interactively~\cite{WLCG:ana_fac_wp}. Demonstrators
 such as the Analysis Grand Challenge
-initiative~\cite{https://doi.org/10.22323/1.414.0235}, in which physics analyses
+initiative~\cite{Held:2022RC}, in which physics analyses
 are performed to test the technologies which will be required for the HL-LHC,
 and many prototype AFs~\cite{AF pilot ref?} have shown promise in this model.
 
@@ -684,19 +689,21 @@ tools and software frameworks taught are experiment-specific, a considerable
 amount of training is invested in common software tools and skills like Python,
 C++, ML, CI/CD, and analysis preservation and reproducibility, etc. There is a
 growing consensus in the HEP community on the need for common training programs
-to bring researchers up to date with new software technologies~\cite{4-7}. As a
-result, in the past 5 years the HSF~\cite{8}, together with Institute for
-Research and Innovation in Software for High Energy Physics (IRIS-HEP)~\cite{9},
-CERN EP-SFT group and FIRST-HEP~\cite{10}, and partnering with The
-Carpentries~\cite{11}, and PyHEP~\cite{13} have developed material for an
-introductory, intermediate and advanced HEP software curriculum~\cite{14} taught
+to bring researchers up to date with new software
+technologies~\cite{HSF-CWP-2017-02,Snowmass:2021_community_engagement_frontier, Snowmass:2021_career_pipeline}.
+As a result, in the past 5 years the HSF~\cite{HSFTraining}, together with Institute for
+Research and Innovation in Software for High Energy Physics (IRIS-HEP)~\cite{IRISHEP:Training},
+CERN EP-SFT group and FIRST-HEP~\cite{FIRST-HEP}, and partnering with The
+Carpentries~\cite{TheCarpentries}, and PyHEP~\cite{HSFPyHEP} have developed material for an
+introductory, intermediate and advanced HEP software curriculum~\cite{HSFTrainingCenter} taught
 to HEP users. In addition, several of our major conferences have tracks on
 software training and corresponding efforts. Other specific training efforts
-include CoDAS-HEP~\cite{15}, Bertinoro~\cite{16}, CERN School of
-Computing~\cite{17} and CERN OpenLab Software workshops~\cite{18}. Thus far,
+include CoDAS-HEP~\cite{CODAS-HEP}, Bertinoro~\cite{INFN:ESC_school}, CERN School of
+Computing~\cite{CERN:computing_school} and CERN OpenLab Software
+workshops~\cite{CERN:SW_workshops}. Thus far,
 over 3000 users in HEP, related Nuclear Physics and computing areas have been
 trained. Current training work has also been published in journals and
-conference proceedings~\cite{19-21}.
+conference proceedings~\cite{Malik:2919564, Malik:chep2023_training_outreach, Malik2021Software}.
 
 \subsection{Challenges and
 Opportunities}\label{challenges-and-opportunities}
@@ -733,7 +740,7 @@ favours visibility and recognition of those working on data analysis projects or
 detector hardware rather than those invested in software and computing. This
 must change if we want to meet future challenges over decades and in multiple
 experiments, which increasingly requires large and long lived software projects.
-We must~\cite{22} provide such opportunities and provide a career path for those
+We must~\cite{hsfcwp} provide such opportunities and provide a career path for those
 involved in software and computing, including in training, by creating job
 opportunities at labs and universities on par with those involved in detector
 construction. This must be supported by increased visibility like publications,
