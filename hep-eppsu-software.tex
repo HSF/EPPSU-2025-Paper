@@ -273,7 +273,7 @@ channels, is a major component of experiment computing budgets.
 \subsection{Baseline Simulation Code
 Needs}\label{baseline-simulation-code-needs}
 
-Almost every HEP experiment uses the Geant4\cite{ALLISON2016187, 1610988, GEANT4:2002zbu}
+Almost every HEP experiment uses the Geant4~\cite{ALLISON2016187, 1610988, GEANT4:2002zbu}
 simulation toolkit. Its
 development and maintenance over the long timescales, driven by the needs of
 experiments using the toolkit, are of critical importance and need to be
@@ -282,7 +282,7 @@ use of higher granularity calorimeters. The main ongoing
 developments~\cite{g4inputs} are the implementation of more detailed EM models
 and rarer processes, the inclusion of low energy nuclear physics effects, and
 the continued tuning of string models. The
-FLUKA.CERN\cite{FLUKA:new_capabiliies, battistoni_2024_stv3r-7ar12} hadronic
+FLUKA.CERN~\cite{FLUKA:new_capabiliies, battistoni_2024_stv3r-7ar12} hadronic
 physics codes have been made available as an option in Geant4, and use of MC
 generator codes for hadron interaction and decay processes is being explored.
 The validation of Geant4 physics against thin and thick target experimental data
@@ -294,10 +294,10 @@ digitisation step is heavily dependent on detector design and consumes
 significant computing for all LHC experiments. Re-use of background
 induced digitised output has been deployed by all of them.
 
-Since the last EPPSU\cite{European:2720131}, most LHC experiments have transitioned
+Since the last EPPSU~\cite{European:2720131}, most LHC experiments have transitioned
 their simulation applications to multi-threaded execution, supported by Geant4,
 and modernised their code. ALICE uses sub-event parallelism, which is now being
-implemented in Geant4. ATLAS and CMS have reported\cite{atlas,cms} throughput
+implemented in Geant4. ATLAS and CMS have reported~\cite{atlas,cms} throughput
 increases of a factor 1.5 to 2 at negligible cost in physics accuracy since the
 beginning of Run 2, from improvements in their own code and in Geant4. This is a
 process that can, and must, continue.
@@ -311,10 +311,10 @@ architectures, such as ARM. There is thus considerable interest in running the
 compute intensive simulation on GPU-CPU hybrid architectures. Efforts are
 focusing on the calculation of EM processes on GPUs, which can be up to two
 thirds of the run time in HEP collider detector simulations. The AdePT
-\cite{adept} and Celeritas\cite{osti_2361202} projects, working with the
+\cite{adept} and Celeritas~\cite{osti_2361202} projects, working with the
 experiments, have demonstrated the possibility to perform the EM part of
 simulations in simplified setups on GPUs in a fraction of the time needed on
-CPUs\cite{add CHEP refs for A and C}, while simulating hadronic physics and
+CPUs~\cite{add CHEP refs for A and C}, while simulating hadronic physics and
 processing experiment-specific energy deposits on CPUs. Bottlenecks,
 particularly in the geometry, have been identified that are being addressed by a
 new surface geometry approach. Further work is needed to integrate GPU-based
@@ -326,7 +326,7 @@ Intensity Frontier and Dark Matter experiments~\cite{opticksCHEP}.
 
 \subsection{Fast Simulation}\label{fast-simulation}
 
-Since the last Strategy Update\cite{European:2720131}, a variety of fast simulation
+Since the last Strategy Update~\cite{European:2720131}, a variety of fast simulation
 techniques have been developed and used in the experiments' Monte Carlo
 production. Parametrised and generative machine learning (ML) approaches for
 calorimeter shower simulations are used (e.g. \cite{af3}), or planned to be
@@ -408,9 +408,9 @@ hadronic interaction simulation to higher energy, as well as overlay of up to
 \section{Reconstruction and Software
 Triggers}\label{reconstruction-and-software-triggers}
 
-LHCb\cite{LHCb:RTDP} and CMS\cite{CMS:Detector_R3}
+LHCb~\cite{LHCb:RTDP} and CMS~\cite{CMS:Detector_R3}
 are now successfully operating GPU farms for their
-Run 3 software trigger systems and ALICE\cite{ALICE:LS2_upgrades} uses such a farm for
+Run 3 software trigger systems and ALICE~\cite{ALICE:LS2_upgrades} uses such a farm for
 calibration of the detectors and the compression of the real data. This
 effort has produced impressive, sustainable production software providing
 speed-ups, portability and vendor
@@ -419,7 +419,7 @@ upgrade has enabled ALICE and LHCb to fully adopt real-time analysis strategies,
 discarding raw data in favour of highly compressed or reconstructed
 data. This reduces storage needs and meets baseline physics goals, demonstrating that
 online calibration and detector alignment in quasi real-time is possible.
-ATLAS\cite{ATLAS:trigger_LS3} and CMS\cite{CMS:enriching_phys_programs}
+ATLAS~\cite{ATLAS:trigger_LS3} and CMS~\cite{CMS:enriching_phys_programs}
 have increased their bandwidth allocation for real-time
 analysis triggers in Run 3 by factors of 2 to 3, allowing them to
 collect up to an order of magnitude more physics events beyond
@@ -432,8 +432,8 @@ hardware DAQ systems. For example, ATLAS uses, and continuously improves, graph
 neural networks based heavy flavour jet and tau identification in its high-level
 trigger (HLT)\cite{ATLAS:perf_commissioning} in Run 3.
 CMS deployed a variational autoencoder based on
-an anomaly detection demonstrator in their Level-1 trigger in 2023\cite{CMS-DP-2023-079},
-making use of HLS4ML\cite{fastml_team_hls4ml}, a HEP community-driven
+an anomaly detection demonstrator in their Level-1 trigger in 2023~\cite{CMS-DP-2023-079},
+making use of HLS4ML~\cite{fastml_team_hls4ml}, a HEP community-driven
 software package for high level synthesis of ML algorithms for FPGAs. In Run 3,
 LHCb has deployed monotonic Lipschitz networks at the HLT
 stage~\cite{LHCb:Lipschitz} to select heavy-flavour-quark decays in an efficient
@@ -453,7 +453,7 @@ first level trigger. The next important advancement will be 4D reconstruction,
 track reconstruction with the use of hit time information. This will be
 applicable at the HL-LHC and to future hadron, electron-positron, and deep
 inelastic scattering collider facilities for background mitigation. The tracking
-R\&D area has fostered the A Common Tracking Software (ACTS) project\cite{Ai2022Common},
+R\&D area has fostered the A Common Tracking Software (ACTS) project~\cite{Ai2022Common},
 an excellent example of a common software toolkit used by several experiments to
 tackle tracking challenges as a community. It is already proving a useful
 platform for common tools, such as traccc~\cite{yeo_2023_8119769, traccc}, a
