@@ -280,11 +280,12 @@ supported. Higher intensity and luminosity require more precision, as does the
 use of higher granularity calorimeters. The main ongoing
 developments~\cite{g4inputs} are the implementation of more detailed EM models
 and rarer processes, the inclusion of low energy nuclear physics effects, and
-the continued tuning of string models. The FLUKA.CERN {[}fluka.cern{]} hadronic
+the continued tuning of string models. The
+FLUKA.CERN\cite{FLUKA:new_capabiliies, battistoni_2024_stv3r-7ar12} hadronic
 physics codes have been made available as an option in Geant4, and use of MC
 generator codes for hadron interaction and decay processes is being explored.
 The validation of Geant4 physics against thin and thick target experimental data
-for each release is essential. And Fluka itself, which is being modernised to
+for each release is essential. And FLUKA.CERN itself, which is being modernised to
 C++, remains critical for radiation transport and shielding calculations.
 
 The computing load from electronics simulation and pileup overlay in the
@@ -295,7 +296,7 @@ induced digitised output has been deployed by all of them.
 Since the last EPPSU\cite{European:2720131}, most LHC experiments have transitioned
 their simulation applications to multi-threaded execution, supported by Geant4,
 and modernised their code. ALICE uses sub-event parallelism, which is now being
-implemented in Geant4. ATLAS and CMS have reported {[}atlas,cms{]} throughput
+implemented in Geant4. ATLAS and CMS have reported\cite{atlas,cms} throughput
 increases of a factor 1.5 to 2 at negligible cost in physics accuracy since the
 beginning of Run 2, from improvements in their own code and in Geant4. This is a
 process that can, and must, continue.
@@ -309,10 +310,10 @@ architectures, such as ARM. There is thus considerable interest in running the
 compute intensive simulation on GPU-CPU hybrid architectures. Efforts are
 focusing on the calculation of EM processes on GPUs, which can be up to two
 thirds of the run time in HEP collider detector simulations. The AdePT
-{[}adept{]} and Celeritas {[}celeritas{]} projects, working with the
+\cite{adept} and Celeritas\cite{osti_2361202} projects, working with the
 experiments, have demonstrated the possibility to perform the EM part of
 simulations in simplified setups on GPUs in a fraction of the time needed on
-CPUs {[}add CHEP refs for A and C{]}, while simulating hadronic physics and
+CPUs\cite{add CHEP refs for A and C}, while simulating hadronic physics and
 processing experiment-specific energy deposits on CPUs. Bottlenecks,
 particularly in the geometry, have been identified that are being addressed by a
 new surface geometry approach. Further work is needed to integrate GPU-based
@@ -343,7 +344,8 @@ investigating the more radical approach of generating high level outputs for
 physics analysis based on the event generators' output, saving greatly on
 storage. Since fast simulation techniques still need large, accurate simulation
 samples for training, they do not remove the need for detailed particle tracking
-simulation, but they can reduce the total size of the simulated samples.
+simulation, but they can reduce the total simulation time and the size of the
+simulated samples.
 
 Large experiments have dedicated fast simulation development teams, an approach
 that can obtain the best performance for a specific application, but smaller
