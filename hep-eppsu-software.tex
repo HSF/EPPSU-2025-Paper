@@ -153,10 +153,10 @@ Factories}\label{higgstopelectroweak-factories-aka-higgs-factories}
 In addition to general purpose generators, LEP-era generators, which were more
 specialized to certain processes, have been
 updated~\cite{Jadach:1999vf,CarloniCalame:2003yt,Jadach:1991by,Denner:2000bj}
-and several have moved from Fortran to C++~\cite{Jadach:2022mbe}. Modern
-generators that have been developed for LHC physics can extend their
-capabilities to $e^+e^-$ collisions due to their process independent algorithms,
-not only for the Standard Model, but also for BSM models. Specialised tools,
+and several have moved from Fortran to C++~\cite{Jadach:2022mbe, Sjostrand:2014zea}.
+Besides modern generators developed for Higgs factories~\cite{Kilian:2007gr, Sherpa:2024mfk},
+generators that have been developed for LHC physics and also for 
+BSM models~\cite{Frixione:2021zdp,Sherpa:2019gpd}, specialised tools,
 e.g., providing luminosity spectra~\cite{Ohl:1996fi}, are being developed. The
 interface and validation of such tools, as well as adapting the general purpose
 Monte Carlo programs to the precision of LEP era MCEGs, is crucial for the
@@ -190,8 +190,8 @@ developments/calculations are needed to reach the required accuracy. Phase-space
 sampling is being improved with adaptive multi-channel versions of VEGAS or
 machine-learning methods, and can utilise GPUs.
 
-Since the last EPPSU, the Key4hep~\cite{Ganis2022} software ecosystem has emerged as a
-common framework supported by and supporting all Higgs factory proposals
+Since the last EPPSU, the Key4hep~\cite{Ganis2022, Sailer:2020fah} software ecosystem has
+emerged as a common framework supported by and supporting all Higgs factory proposals
 (FCC, CLIC, ILC, CEPC), and also the Muon collider and
 Electron-Ion-Collider. It provides coherent interfaces to many
 generators enabling meaningful systematic comparisons of cross
