@@ -71,7 +71,7 @@ experimental data, are indispensable for the planning and analysis of
 all particle physics experiments. MCEGs bridge
 the chasm between theoretical ideas and calculations
 and experimental reality. They provide inputs to
-detailed software models of detectors, are key components in the
+detailed software models of detectors are key components in the
 evaluation of systematic uncertainties, and frequently
 play an essential role in the interpretation of those measurements.
 
@@ -126,7 +126,7 @@ performed by the CMS Collaboration~\cite{CMS-DP-2024-086}) and showed
 improvement up to $\times 7$ in event generation time. The PEPPER (Portable
 Engine for the Production of Parton-level Event Records)~\cite{Bothmann:2023gew}
 event generator, developed by the Sherpa generator team~\cite{Sherpa:2019gpd}
-parallelizes the entire parton level event generation and has been tested across
+parallelises the entire parton level event generation and has been tested across
 a wide range of GPU architectures. The benchmarking exercises performed by
 experiments are still in nascent stages, with the eventual goal that event
 generators will be run on GPUs during MC huge production campaigns.
@@ -150,8 +150,8 @@ sufficient~\cite{CMS:2024jdl}.
 \subsection{Higgs/Top/Electroweak factories aka Higgs
 Factories}\label{higgstopelectroweak-factories-aka-higgs-factories}
 
-In addition to general purpose generators, LEP-era generators, which were more
-specialized to certain processes, have been
+In addition to general-purpose generators, LEP-era generators, which were more
+specialised to certain processes, have been
 updated~\cite{Jadach:1999vf,CarloniCalame:2003yt,Jadach:1991by,Denner:2000bj}
 and several have moved from Fortran to C++~\cite{Jadach:2022mbe, Sjostrand:2014zea}.
 Modern generators, developed for Higgs factories~\cite{Kilian:2007gr, Sherpa:2024mfk}
@@ -159,11 +159,11 @@ or for LHC physics~\cite{Frixione:2021zdp,Sherpa:2019gpd},  due to their process
 independent algorithms, have the capability to provide event generation not only
 for the Standard Model, but also for BSM models. Specialised tools are necessary,
 e.g., for providing luminosity spectra~\cite{Ohl:1996fi} based on Guinea Pig~\cite{Schulte:1998au}.
-The interface and validation of such tools, as well as adapting the general purpose
-Monte Carlo programmes to the precision of LEP era MCEGs, is crucial for the
+The interface and validation of such tools, as well as adapting the general-purpose
+Monte Carlo programs to the precision of LEP era MCEGs, is crucial for the
 physics programme of future Higgs factories.
 
-The high precision measurements at a Higgs factory poses tremendous challenges.
+The high-precision measurements at a Higgs factory poses tremendous challenges.
 All processes have to be known to at least NNLO EW and
 some, such as Bhabha scattering, even N\textsuperscript{3}LO
 EW~\cite{ECFAHiggsStudy:2025}, which will require the development of new
@@ -181,12 +181,11 @@ Yennie-Frautschi-Suura (YFS) resummation, which was crucial to the LEP physics
 programme as it was the main approach KKMC~\cite{Jadach:1999vf}, in which both
 the order-by-order perturbative improvements and resummation of soft logarithms
 is achieved in one method. This method has been implemented in process
-independent fashion in Sherpa~\cite{Krauss:2022ajk}, as an example of how state
-of the art predictions from the LEP era can benefit from technical advances in
+independent fashion in Sherpa~\cite{Krauss:2022ajk}, as an example of how state-of-the-art predictions from the LEP era can benefit from technical advances in
 LHC MC tools.
 
-Specialized tools are necessary for specific processes, e.g., luminosity
-determination (BHLumi, Babayaga), top threshold. Further
+Specialised tools are necessary for specific processes, e.g., luminosity
+determination (BHLumi~\cite{Jadach:1991by}, Babayaga~\cite{CarloniCalame:2003yt}), top threshold. Further
 developments/calculations are needed to reach the required accuracy. Phase-space
 sampling is being improved with adaptive multi-channel versions of VEGAS or
 machine-learning methods, and can utilise GPUs.
@@ -228,9 +227,9 @@ HEP~\cite{campbell2024eg}. Specific obstacles to the neutrino community must als
 overcome. The field is heavily reliant upon nuclear research, which is often
 funded for other applications. Technical barriers already solved for the LHC
 still remain an issue for the neutrino community due to a lack of dedicated
-effort. E.g., there is no common event format (although one has 
+effort, e.g., there is no common event format (although one has 
 been proposed~\cite{gardiner2024nuhepmc}) and no standardised interfaces for related
-software. Implementation of new models also typically remains very labour
+software. The implementation of new models also typically remains very labour
 intensive, with adaptation of LHC techniques for streamlining the work only just
 beginning~\cite{PhysRevD.105.096006}. Supporting the
 wide variety of new physics searches envisioned for future experiments, will, in
@@ -295,7 +294,7 @@ significant computing for all LHC experiments. Re-use of background
 induced digitised output has been deployed by all of them.
 
 Since the last EPPSU~\cite{European:2720131}, most LHC experiments have transitioned
-their simulation applications to multi-threaded execution, supported by Geant4,
+their simulation applications to multithreaded execution, supported by Geant4,
 and modernised their code. ALICE uses sub-event parallelism, which is now being
 implemented in Geant4. ATLAS and CMS have
 reported~\cite{ATLAS:2024_swcomp_run3, CMS:computing_results_2023} throughput
@@ -330,23 +329,23 @@ Intensity Frontier and Dark Matter experiments~\cite{opticksCHEP}.
 Since the last Strategy Update~\cite{European:2720131}, a variety of fast simulation
 techniques have been developed and used in the experiments' Monte Carlo
 production. Parametrised and generative machine learning (ML) approaches for
-calorimeter shower simulations are used (e.g. \cite{af3}), or planned to be
+calorimeter shower simulations are used (e.g., \cite{af3}), or planned to be
 used, in a substantial fraction of Monte Carlo production by ATLAS, CMS, and
 LHCb. The use of fast simulation is expected to increase in the next few years,
 with more applications transitioning from R\&D to production. More sophisticated
 ML methods, e.g., INN~\cite{kim2021innmethodidentifyingcleanannotated},
 CFM~\cite{tong2024improvinggeneralizingflowbasedgenerative} are being explored.
-Fast simulation R\&D includes the generation of low level detector output,
+Fast simulation R\&D includes the generation of low-level detector output,
 tracking with simplified geometry, fast inner detector simulation based on
-parametrized models (e.g., FATRAS used by ATLAS~\cite{fatras}) or using
+parametrised models (e.g., FATRAS used by ATLAS~\cite{fatras}) or using
 ML-methods, and the correction of fast simulation output to match detailed
 simulation training samples. ATLAS's FastChain tool combines fast tracking and
 fast calorimeter simulation in one workflow. CMS, LHCb, and ALICE are
-investigating the more radical approach of generating high level outputs for
+investigating the more radical approach of generating high-level outputs for
 physics analysis based on the event generators' output, saving greatly on
 storage. Since fast simulation techniques still need large, accurate simulation
 samples for training, they do not remove the need for detailed particle tracking
-simulation, but they can reduce the total simulation time and the size of the
+simulations, but they can reduce the total simulation time and the size of the
 simulated samples.
 
 Large experiments have dedicated fast simulation development teams, an approach
@@ -375,7 +374,7 @@ the common Key4hep~\cite{Ganis2022} framework. Gaseous detector R\&D relies
 heavily on Garfield++\cite{garfield++} for detailed modelling of signal
 formation. Long term support of these tools is critical.
 
-The FCC-ee experiments should collect data sets similar or
+The FCC-ee experiments should collect datasets similar or
 larger size than that of HL-LHC experiments. They will perform precision
 measurements in a cleaner environment than hadron colliders, so simulation
 needs to be at least as fast, but also more accurate than for the HL-LHC. The
@@ -394,7 +393,7 @@ hadronic interaction simulation to higher energy, as well as overlay of up to
   Geant4, improving the fidelity and speed of physics models, and ensuring a
   generational transition before current experts retire as well.
 \item
-  Provide suitable long term funding to maintain new developments which
+  Provide suitable long-term funding to maintain new developments which
   come to fruition.
 \item
   Invest in R\&D lines that can explore simulation on accelerated
@@ -412,7 +411,7 @@ Triggers}\label{reconstruction-and-software-triggers}
 LHCb~\cite{LHCb:RTDP} and CMS~\cite{CMS:Detector_R3}
 are now successfully operating GPU farms for their
 Run 3 software trigger systems and ALICE~\cite{ALICE:LS2_upgrades} uses such a farm for
-calibration of the detectors and the compression of the real data. This
+the calibration of the detectors and the compression of the real data. This
 effort has produced impressive, sustainable production software providing
 speed-ups, portability and vendor
 independence~\cite{Concas:2024cyu, Aaij2020Allen,MathesP3MA2017}. The
@@ -420,7 +419,7 @@ upgrade has enabled ALICE and LHCb to fully adopt real-time analysis strategies,
 discarding raw data in favour of highly compressed or reconstructed
 data. This reduces storage needs and meets baseline physics goals, demonstrating that
 online calibration and detector alignment in quasi real-time is possible.
-ATLAS~\cite{ATLAS:trigger_LS3} and CMS~\cite{CMS:enriching_phys_programmes}
+ATLAS~\cite{ATLAS:trigger_LS3} and CMS~\cite{CMS:enriching_phys_programs}
 have increased their bandwidth allocation for real-time
 analysis triggers in Run 3 by factors of 2 to 3, allowing them to
 collect up to an order of magnitude more physics events beyond
@@ -435,7 +434,7 @@ trigger (HLT)\cite{ATLAS:perf_commissioning} in Run 3.
 CMS deployed a variational autoencoder based on
 an anomaly detection demonstrator in their Level-1 trigger in 2023~\cite{CMS-DP-2023-079},
 making use of HLS4ML~\cite{fastml_team_hls4ml}, a HEP community-driven
-software package for high level synthesis of ML algorithms for FPGAs. In Run 3,
+software package for high-level synthesis of ML algorithms for FPGAs. In Run 3,
 LHCb has deployed monotonic Lipschitz networks at the HLT
 stage~\cite{LHCb:Lipschitz} to select heavy-flavour-quark decays in an efficient
 and robust way, as well as adding neural network models to their GPU HLT1 to
@@ -502,8 +501,8 @@ Interest in AI/ML solutions is rapidly increasing as they lend themselves well
 to low latency approaches for real-time analysis and fast data processing.
 Reaching the latency and throughput requirements at the lowest levels requires
 specialised expertise, posing a significant challenge and open source
-collaboration projects should be pursued further. E.g., the HLS4ML
-project~\cite{fastml_hls4ml,Duarte:2018ite} for ML on FPGA has provided an
+collaboration projects should be pursued further. For example, the HLS4ML
+project~\cite{fastml_hls4ml,Duarte:2018ite} has provided an
 easier, faster means of developing ML algorithms for FPGAs, together with the
 capability to generate bitwise correct C++ representations for simulation,
 thus reducing the gap in firmware expertise.
@@ -576,7 +575,7 @@ such as ROOT. Further emphasis on interoperability and sustainability have
 encouraged many tools to implement/enhance their Python compatibility, e.g.,
 through C++-Python wrappers, such as ROOT's Python Interface. To overcome
 performance limitations, many Python packages have adopted an \emph{array
-programmeming} interface, where large arrays of data are passed into a compiled
+programming} interface, where large arrays of data are passed into a compiled
 layer for performance, focusing the Python portion of codebases to the task of
 dispatch and metadata manipulation. A recent addition to the community is a
 small but growing group of analysts employing Julia. Whilst not expected to
@@ -716,14 +715,14 @@ While a lot of progress has been made with respect to finding and establishing
 common training across HEP, several challenges still remain. Currently, each
 experiment may have its own training programmes that are specific to its
 needs, but for HEP wide effort, committed funding sources for HEP have been
-lacking. A central organization like the HSF is needed to facilitate cooperation
+lacking. A central organisation like the HSF is needed to facilitate cooperation
 and engage people in common training efforts. Incentives and recognition are
 essential to be able to recruit mentors and tutors who invest time in training.
 Scalability and sustainability are key to achieve a steady state, where the
 scale of training activities match the number of incoming students each year.
 New opportunities, such as using Large Language Models, need to be investigated.
 Training scope and curriculum must evolve to meet the needs of the community.
-New instructors, and materials developers recruited and trained continuously to
+New instructors and materials developers recruited and trained continuously to
 sustain a long-term effort. Commitments from major HEP labs and experiments are
 required and they should see value and invest in workforce training. Diversity
 and inclusion should be a guiding principle to develop the workforce pipeline
@@ -743,7 +742,7 @@ early career researchers who are trying to build a career. The current mindset
 favours visibility and recognition of those working on data analysis projects or
 detector hardware rather than those invested in software and computing. This
 must change if we want to meet future challenges over decades and in multiple
-experiments, which increasingly requires large and long lived software projects.
+experiments, which increasingly requires large and long-lived software projects.
 We must~\cite{hsfcwp} provide such opportunities and provide a career path for those
 involved in software and computing, including in training, by creating job
 opportunities at labs and universities on par with those involved in detector
@@ -790,3 +789,4 @@ is the key message for the future.
 \printbibliography
 
 \end{document}
+
