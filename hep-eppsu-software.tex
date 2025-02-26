@@ -185,7 +185,7 @@ independent fashion in Sherpa~\cite{Krauss:2022ajk}, as an example of how state-
 LHC MC tools.
 
 Specialised tools are necessary for specific processes, e.g., luminosity
-determination (BHLumi, Babayaga), top threshold. Further
+determination (BHLumi~\cite{Jadach:1991by}, Babayaga~\cite{CarloniCalame:2003yt}), top threshold. Further
 developments/calculations are needed to reach the required accuracy. Phase-space
 sampling is being improved with adaptive multi-channel versions of VEGAS or
 machine-learning methods, and can utilise GPUs.
@@ -227,7 +227,7 @@ HEP~\cite{campbell2024eg}. Specific obstacles to the neutrino community must als
 overcome. The field is heavily reliant upon nuclear research, which is often
 funded for other applications. Technical barriers already solved for the LHC
 still remain an issue for the neutrino community due to a lack of dedicated
-effort. e.g., there is no common event format (although one has 
+effort, e.g., there is no common event format (although one has 
 been proposed~\cite{gardiner2024nuhepmc}) and no standardised interfaces for related
 software. The implementation of new models also typically remains very labour
 intensive, with adaptation of LHC techniques for streamlining the work only just
@@ -340,7 +340,7 @@ tracking with simplified geometry, fast inner detector simulation based on
 parametrised models (e.g., FATRAS used by ATLAS~\cite{fatras}) or using
 ML-methods, and the correction of fast simulation output to match detailed
 simulation training samples. ATLAS's FastChain tool combines fast tracking and
-fast calorimeter simulations in one workflow. CMS, LHCb, and ALICE are
+fast calorimeter simulation in one workflow. CMS, LHCb, and ALICE are
 investigating the more radical approach of generating high-level outputs for
 physics analysis based on the event generators' output, saving greatly on
 storage. Since fast simulation techniques still need large, accurate simulation
@@ -418,7 +418,7 @@ independence~\cite{Concas:2024cyu, Aaij2020Allen,MathesP3MA2017}. The
 upgrade has enabled ALICE and LHCb to fully adopt real-time analysis strategies,
 discarding raw data in favour of highly compressed or reconstructed
 data. This reduces storage needs and meets baseline physics goals, demonstrating that
-online calibration and detector alignment in quasi-real time is possible.
+online calibration and detector alignment in quasi real-time is possible.
 ATLAS~\cite{ATLAS:trigger_LS3} and CMS~\cite{CMS:enriching_phys_programs}
 have increased their bandwidth allocation for real-time
 analysis triggers in Run 3 by factors of 2 to 3, allowing them to
@@ -501,8 +501,8 @@ Interest in AI/ML solutions is rapidly increasing as they lend themselves well
 to low latency approaches for real-time analysis and fast data processing.
 Reaching the latency and throughput requirements at the lowest levels requires
 specialised expertise, posing a significant challenge and open source
-collaboration projects should be pursued further. e.g., the HLS4ML
-project~\cite{fastml_hls4ml,Duarte:2018ite} for ML on FPGA has provided an
+collaboration projects should be pursued further. For example, the HLS4ML
+project~\cite{fastml_hls4ml,Duarte:2018ite} has provided an
 easier, faster means of developing ML algorithms for FPGAs, together with the
 capability to generate bitwise correct C++ representations for simulation,
 thus reducing the gap in firmware expertise.
@@ -685,7 +685,7 @@ and many prototype AFs have shown promise in this model.
 
 \subsection{Current Status}\label{current-status}
 
-Present-day HEP experimental collaborations have hundreds or thousands of users.
+Present day HEP experimental collaborations have hundreds or thousands of users.
 They have internal structures and onboarding processes to help new users learn
 and jumpstart software and physics analysis contributions. While most analysis
 tools and software frameworks taught are experiment-specific, a considerable
