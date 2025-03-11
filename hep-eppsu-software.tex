@@ -115,7 +115,7 @@ generation}\label{reduction-of-negative-weights-in-event-generation}
 Events with negative weights can occur in MC schemes that include
 $\mathrm{N}^\mathrm{n}\mathrm{LO}$ corrections to cross sections and can
 significantly dilute the statistical power of a sample. This statistical loss is
-most significant events have to be propagated through the downstream steps,
+most significant for events have to be propagated through the downstream steps,
 which are computationally expensive. Positive resampling~\cite{Andersen:2020sjs}
 and cell resampling methods~\cite{Andersen:2021mvw} have been developed by the
 generator theory community -- these methods redistribute weights, without
@@ -292,8 +292,8 @@ developments~\cite{g4inputs} are the implementation of more detailed EM models
 and rarer processes, the inclusion of low energy nuclear physics effects, and
 the continued tuning of string models. The
 FLUKA.CERN~\cite{FLUKA:new_capabiliies, battistoni_2024_stv3r-7ar12} hadronic
-physics codes have been made available as an option in Geant4, and use of MC
-generator codes for hadron interaction and decay processes is being explored.
+physics code have been made available as an option in Geant4, and use of MC
+generator code for hadron interaction and decay processes is being explored.
 The validation of Geant4 physics against thin and thick target experimental data
 for each release is essential. FLUKA.CERN itself, which is being modernised to
 C++, remains critical for radiation transport and shielding calculations.
@@ -328,7 +328,7 @@ CPUs~\cite{CHEP2024:celeritas_improvements, CHEP2024:adept_gpu_em_transport},
 while simulating hadronic physics and
 processing experiment-specific energy deposits on CPUs. Bottlenecks,
 particularly in the geometry, have been identified that are being addressed by a
-new surface geometry approach. Further work is needed to integrate GPU-based
+new surface geometry approach. Further work is needed to completely integrate GPU-based
 simulation modules into experiment software frameworks, but the goal of using
 GPUs for MC datasets for the major LHC experiments by the start of Run 4 appears
 within reach. The other leading candidate for GPU simulation is the simulation
@@ -453,7 +453,7 @@ improve track purity~\cite{neuralmodelHLT1LHCb}.
 
 Many experiments have recognised the compute intensive need for tracking
 capabilities in the trigger for improved event selection. Since Run 3, LHCb
-reconstructs tracks on GPU at the LHC bunch crossing rate, identifying quality
+reconstructs tracks on GPUs at the LHC bunch crossing rate, identifying quality
 particle candidates for offline analysis for every event~\cite{LHCb:HLT}, thus
 avoiding hardware-based first level trigger selections impacting its primary
 physics programme, such as measurements for CP violations in heavy flavoured
@@ -472,8 +472,8 @@ demonstrator project for GPU-based tracking.
 
 However, the rapidly evolving software landscape in HEP is highlighting a
 struggle to keep physicists sufficiently trained to contribute to reconstruction
-and trigger software in a useful way (e.g., C++ knowledge is hard to come by,
-these days). There is a growing need for a dedicated group of software and
+and trigger software in a useful way (e.g., C++ expertise is increasingly hard to find). 
+There is a growing need for a dedicated group of software and
 physics professionals working together. Proper software engineering leads to
 immense benefits and is a foundation for analysis preservation, as well as
 efficient and reliable, hence more sustainable, computing.
@@ -487,7 +487,7 @@ efforts in the proposed fields will broadly benefit future HEP programmes.
 software}\label{enhanced-heterogeneous-computing-software}
 
 Utilising heterogeneous architectures, such as GPUs and FPGAs, appears
-inevitable in several different areas. One of the main challenges is
+inevitable in several different areas, yet one of the main challenges is
 anticipating the technological landscape in 5-10 years. While GPUs are one of
 the most promising accelerators, alternative accelerator and processor
 technologies, such as RISC-V, IPUs and AI-processors, are evolving rapidly and
@@ -609,7 +609,7 @@ interoperable data structures for all stages of analysis. The ROOT RNTuple data
 serialisation interface, replacing the TTree interface, has a clear
 specification as well as significant enhancements in support for multithreading
 and asynchronous I/O~\cite{ROOT:RDataFrame_prod_path}. The
-HEP Statistics serialisation Standard (HS3) aims to provide a common, framework
+HEP Statistics Serialisation Standard (HS3) aims to provide a common, framework
 agnostic serialised description of the components involved in fitting
 statistical models (models, datasets, likelihoods,
 etc.)~\cite{HS3github}.
@@ -734,8 +734,9 @@ scale of training activities match the number of incoming students each year.
 New opportunities, such as using Large Language Models, need to be investigated.
 Training scope and curriculum must evolve to meet the needs of the community.
 New instructors and materials developers recruited and trained continuously to
-sustain a long-term effort. Commitments from major HEP labs and experiments are
-required and they should see value and invest in workforce training. Diversity
+sustain a long-term effort. 
+Commitments from major HEP labs and experiments to workforce training brings significant value. 
+Diversity
 and inclusion should be a guiding principle to develop the workforce pipeline
 and should engage the broader community that it represents.
 
