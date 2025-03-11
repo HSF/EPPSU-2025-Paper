@@ -439,9 +439,9 @@ baseline for low mass exotic particle resonance searches.
 The need for faster reconstruction and data processing algorithms is being
 widely addressed by ML and AI algorithms. AI tools are already used extensively
 in HEP offline software and are increasingly found in online software as well as
-hardware DAQ systems. For example, ATLAS uses, and continuously improves, graph
-neural networks based heavy flavour jet and tau identification in its high-level
-trigger (HLT)\cite{ATLAS:perf_commissioning} in Run 3.
+hardware DAQ systems. For example, ATLAS uses, and continuously improves, transformer 
+neural network based heavy flavour jet and tau identification in its high-level
+trigger (HLT)~\cite{ATLAS:perf_commissioning} in Run 3.
 CMS deployed a variational autoencoder based on
 an anomaly detection demonstrator in their Level-1 trigger in 2023~\cite{CMS-DP-2023-079},
 making use of HLS4ML~\cite{fastml_team_hls4ml}, a HEP community-driven
@@ -457,9 +457,9 @@ reconstructs tracks on GPUs at the LHC bunch crossing rate, identifying quality
 particle candidates for offline analysis for every event~\cite{LHCb:HLT}, thus
 avoiding hardware-based first level trigger selections impacting its primary
 physics programme, such as measurements for CP violations in heavy flavoured
-hadron decays. Since Run 3, CMS is running on GPUs the track reconstruction
-based on the pixel detector data and is now poised to make a big advance at the
-HL-LHC by running tracking for particle flow reconstruction in a hardware-based
+hadron decays. Also from Run 3, CMS runs track reconstruction on GPUs based on the
+pixel detector data and will make a big advance at the HL-LHC
+by running tracking for particle flow reconstruction in a hardware-based
 first level trigger. The next important advancement will be 4D reconstruction,
 track reconstruction with the use of hit time information. This will be
 applicable at the HL-LHC and to future hadron, electron-positron, and deep
@@ -538,7 +538,7 @@ Dedicated funding is essential to achieve this. Proper software engineering and
 common tools for continuous integration and automation of quality assurance
 tasks will ultimately conserve resources, as will identifying key software
 developments that are widely applicable. Common software can be more robustly
-tested and validated, with the benefits shared by many. This will foster an
+tested and validated, with the benefits shared by many. This will foster a
 sustainable software environment and at the same time increase computing
 efficiency to improve physics reach.
 
