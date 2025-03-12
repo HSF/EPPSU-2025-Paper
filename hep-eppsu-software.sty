@@ -1,4 +1,4 @@
-%% jheppub.sty
+%% Customized version of jheppub.sty for a specific cover page layout
 %% Copyright 2013 SISSA Medialab
 %
 % This work may be distributed and/or modified under the
@@ -36,6 +36,7 @@
 \RequirePackage{amssymb}
 \RequirePackage{epsfig}
 \RequirePackage{graphicx}
+\RequirePackage{setspace}
 %ER\ifnatbibsort\RequirePackage[numbers,sort&compress]{natbib}\else\RequirePackage[numbers,compress]{natbib}\fi
 \RequirePackage{color}
 \RequirePackage[colorlinks=true
@@ -61,6 +62,7 @@
 \def\@collaborationImg{\@empty}
 \def\@proceeding{\@empty}
 \def\@preprint{\@empty}
+\def\@genremark{\@empty}
 
 \newcommand{\subheader}[1]{\gdef\@subheader{#1}}
 \newcommand{\keywords}[1]{\if!\@keywords!\gdef\@keywords{#1}\else%
@@ -135,7 +137,15 @@
 
 
 % Collaboration macros
-\newcommand*\collaboration[1]{\gdef\@collaboration{#1}}
+%automatically put a comma between collaborations
+\newtoks\collaboration@toks\newcounter{collaboration@counter}%
+\setcounter{collaboration@counter}{0}%
+\newcommand{\collaboration}[1]{
+\ifnum\thecollaboration@counter>0\collaboration@toks=\expandafter{\the\collaboration@toks, \@collaboration{#1}}%
+\else\collaboration@toks=\expandafter{\the\collaboration@toks\@collaboration{#1}}%
+\fi\stepcounter{collaboration@counter}
+}
+
 \newcommand*\collaborationImg[2][]{\gdef\@collaborationImg{#2}}
 
 %all pieces get a ``after'' spacing
@@ -144,9 +154,10 @@
 \newcommand\afterProceedingsSpace{\vskip21pt plus0.4fil minus15pt}
 \newcommand\afterTitleSpace{\vskip23pt plus0.06fil minus13pt}
 \newcommand\afterRuleSpace{\vskip23pt plus0.06fil minus13pt}
-\newcommand\afterCollaborationSpace{\vskip3pt plus 2pt minus 1pt}
+\newcommand\afterGenremarkSpace{\vskip10pt plus4pt minus4pt}
+\newcommand\afterCollaborationSpace{\vskip10pt plus4pt minus4pt}
 \newcommand\afterCollaborationImgSpace{\vskip3pt plus 2pt minus 1pt}
-\newcommand\afterAuthorSpace{\vskip5pt plus4pt minus4pt}
+\newcommand\afterAuthorSpace{\vskip10pt plus4pt minus4pt}
 \newcommand\afterAffiliationSpace{\vskip3pt plus3pt}
 \newcommand\afterEmailSpace{\vskip16pt plus9pt minus10pt\filbreak}
 \newcommand\afterXtumSpace{\par\bigskip}
@@ -156,11 +167,17 @@
 \newcommand\afterDedicatedSpace{\vskip0pt plus0.01fil}
 \newcommand\afterTocSpace{\bigskip\medskip}
 \newcommand\afterTocRuleSpace{\bigskip\bigskip}
+% Before author/contribution lists
+\newcommand\afterAuthorContributionHeader{\vskip8pt plus 2pt minus 1pt}
+% Space before affiliations
+\newcommand\beforeAffiliationSpace{\vskip10pt plus3pt}
 %this is the ``itemsep'' of the affiliations list
 \newlength{\affiliationsSep}\setlength{\affiliationsSep}{-3pt}
 %this hook is needed if the toc starts on the first page
 \newcommand\beforetochook{\pagestyle{myplain}\pagenumbering{roman}}
-
+% Text to be inserted before Editors and Collaborations
+\newcommand*{\genremark}[1]{\gdef\@genremark{#1}
+}
 \DeclareFixedFont\trfont{OT1}{phv}{b}{sc}{11}
 
 %first page
@@ -170,6 +187,10 @@
 \thispagestyle{titlepage}
 \setcounter{page}{0}
 \noindent{\small\scshape\@fpheader}\@preprint\par
+% HSF logo
+{\raggedleft%
+	\includegraphics[width=3cm]{hsf_logo_angled_square}\par
+}
 \afterLogoSpace
 % Subheader
 \if!\@subheader!\else\noindent{\trfont{\@subheader}}\fi
@@ -183,22 +204,29 @@
 % Rule
 \hrule height 1.5\p@%
 \afterRuleSpace
-% Collaboration
-\if!\@collaboration!\else
-{\Large\bfseries\sffamily\raggedright\@collaboration}\par
-\afterCollaborationSpace
-\fi
-%
-\if!\@collaborationImg!\else
-{\normalsize\bfseries\sffamily\raggedright\@collaborationImg}\par
-\afterCollaborationImgSpace
-%% I leave the size and font so that if there are two collaboration
-%% they can be linked with an 'and'
+% General remark
+\if!\@genremark!\else
+\begingroup
+\setstretch{1.0}
+{\Large\flushleft\sffamily\bfseries\@genremark\par}
+\endgroup
+\afterGenremarkSpace
 \fi
 % Author
-{\bfseries\raggedright\sffamily\the\auth@toks\par}
+{\Large\flushleft\sffamily\bfseries{Edited by:}\par}
+\afterAuthorContributionHeader
+{\large\raggedright\sffamily\the\auth@toks\par}
 \afterAuthorSpace
+% Collaboration
+\begingroup
+\setstretch{1.0}
+{\Large\flushleft\sffamily\bfseries{This document has been endorsed by the following experiments and communities:}\par}
+\endgroup
+\afterAuthorContributionHeader
+{\Large\sffamily\raggedright\the\collaboration@toks}\par
+\afterCollaborationSpace
 % Affiliation
+\beforeAffiliationSpace
 \ifaffil\begin{list}{}{%
 \setlength{\leftmargin}{0.28cm}%
 \setlength{\labelsep}{0pt}%
