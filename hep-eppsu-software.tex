@@ -78,15 +78,15 @@ parts of our data processing chain.
 Monte Carlo Event Generators (MCEGs) that simulate particle collisions,
 or `events', to a level that allows direct comparison with
 experimental data, are indispensable for the planning and analysis of
-all particle physics experiments. MCEGs bridge
-the chasm between theoretical ideas and calculations
-and experimental reality. They provide inputs to
+all particle physics experiments. MCEGs are vital to connect
+theoretical ideas and calculations
+to experimental results. They provide inputs to
 detailed software models of detectors are key components in the
 evaluation of systematic uncertainties, and frequently
 play an essential role in the interpretation of those measurements.
 
 As such, the MCEGs buttress the continued success of the experimental programme
-through sustained improvements responding to ever-increasing demands on their
+through sustained improvements responding to increasing demands on their
 precision, reach, flexibility, and usability. The development, maintenance,
 validation and tuning of these central assets is driven by a relatively small,
 but critically important, ecosystem of researchers. The ongoing physics
@@ -119,7 +119,8 @@ done~\cite{HSFPhysicsEventGeneratorWG:2020gxw,maltoni2022tf07snowmassreporttheor
 generation}\label{reduction-of-negative-weights-in-event-generation}
 
 Events with negative weights can occur in MC schemes that include
-$\mathrm{N}^\mathrm{n}\mathrm{LO}$ corrections to cross sections and can
+higher order (next-to-leading order, NLO; next-to-next-to-leading order, NNLO; and beyond)
+corrections to cross sections and can
 significantly dilute the statistical power of a sample. This statistical loss is
 most significant for events have to be propagated through the downstream steps,
 which are computationally expensive. Positive resampling~\cite{Andersen:2020sjs}
@@ -145,7 +146,7 @@ event generator, developed by the Sherpa generator team~\cite{Sherpa:2019gpd}
 parallelises the entire parton level event generation and has been tested across
 a wide range of GPU architectures. The benchmarking exercises performed by
 experiments are still in nascent stages, with the eventual goal that event
-generators will be run on GPUs during MC huge production campaigns.
+generators will be run on GPUs during huge MC production campaigns.
 
 \subsubsection{Use of ML in event generation}
 \label{use-of-ml-in-event-generation}
@@ -173,20 +174,20 @@ and several have moved from Fortran to C++~\cite{Jadach:2022mbe, Sjostrand:2014z
 Modern generators, developed for Higgs factories~\cite{Kilian:2007gr, Sherpa:2024mfk}
 or for LHC physics~\cite{Frixione:2021zdp,Sherpa:2019gpd},  due to their process
 independent algorithms, have the capability to provide event generation not only
-for the Standard Model, but also for BSM models. Specialised tools are necessary,
+for the Standard Model, but also for Beyond the Standard Model (BSM). Specialised tools are necessary,
 e.g., for providing luminosity spectra~\cite{Ohl:1996fi} based on Guinea Pig~\cite{Schulte:1998au}.
 The interface and validation of such tools, as well as adapting the general-purpose
 Monte Carlo programs to the precision of LEP era MCEGs, is crucial for the
 physics programme of future Higgs factories.
 
 The high-precision measurements at a Higgs factory poses tremendous challenges.
-All processes have to be known to at least NNLO EW and
+All processes have to be known to at least NNLO electroweak (EW) and
 some, such as Bhabha scattering, even N\textsuperscript{3}LO
 EW~\cite{ECFAHiggsStudy:2025}, which will require the development of new
 efficient algorithms to automate the calculation of these radiative corrections.
 These fixed-order corrections must also be supplemented with all-order
 resummation methods. Currently, the electron parton distribution function (PDF)
-at LL and NLL order is known, which must be matched to an exclusive description
+at leading logarithmic (LL) and next-to-leading logarithmic (NLL) order is known, which must be matched to an exclusive description
 of the photon phase space, such as a parton shower, to at least
 NNLL~\cite{ECFAHiggsStudy:2025,Bertone:2019hks,Frixione:2019lga}. Such
 universally applicable matching formalism between fixed-order and resummed
@@ -194,7 +195,7 @@ calculations with exclusive radiation simulations and QED showers is needed to
 achieve per-mil precision for inclusive and exclusive
 predictions~\cite{Frixione:2022ofv}. A complementary approach is the
 Yennie-Frautschi-Suura (YFS) resummation, which was crucial to the LEP physics
-programme as it was the main approach KKMC~\cite{Jadach:1999vf}, in which both
+programme as it was the main approach in the KK generator~\cite{Jadach:1999vf}, in which both
 the order-by-order perturbative improvements and resummation of soft logarithms
 is achieved in one method. This method has been implemented in process
 independent fashion in Sherpa~\cite{Krauss:2022ajk}, as an example of how state-of-the-art predictions from the LEP era can benefit from technical advances in
@@ -331,7 +332,7 @@ focusing on the calculation of EM processes on GPUs, which can be up to two
 thirds of the run time in HEP collider detector simulations. The AdePT
 \cite{Amadio_2023, AdePT} and Celeritas~\cite{osti_2361202} projects, working with the
 experiments, have demonstrated the possibility to perform the EM part of
-simulations in simplified setups on GPUs in a fraction of the time needed on
+simulations in simplified setups on GPUs faster than on
 CPUs~\cite{CHEP2024:celeritas_improvements, CHEP2024:adept_gpu_em_transport},
 while simulating hadronic physics and
 processing experiment-specific energy deposits on CPUs. Bottlenecks,
@@ -677,7 +678,7 @@ supported by important tools such as Rivet~\cite{10.21468/SciPostPhys.8.2.026}.
 \subsection{Analysis facilities and data analysis at
 scale}\label{analysis-facilities-and-data-analysis-at-scale}
 
-With the ever-increasing scale of data to be processed in HEP analyses, it is
+With the increasing scale of data to be processed in HEP analyses, it is
 vital that analysts can employ large scale distributed computing resources.
 Analysis facilities (AFs) provide an approach to analysis infrastructure in
 which analysts can interface with these resources whilst also being able to
