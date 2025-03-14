@@ -76,6 +76,18 @@
   url       = {https://scipost.org/10.21468/SciPostPhys.16.5.130}
 }
 
+@article{10.21468/SciPostPhys.8.2.026,
+  title     = {{Robust Independent Validation of Experiment and Theory: Rivet version 3}},
+  author    = {Christian Bierlich and Andy Buckley and Jonathan Butterworth and Christian Holm Christensen and Louie Corpe and David Grellscheid and Jan Fiete Grosse-Oetringhaus and Christian Gutschow and Przemyslaw Karczmarczyk and Jochen Klein and Leif Lonnblad and Christopher Samuel Pollard and Peter Richardson and Holger Schulz and Frank Siegert},
+  journal   = {SciPost Phys.},
+  volume    = {8},
+  pages     = {026},
+  year      = {2020},
+  publisher = {SciPost},
+  doi       = {10.21468/SciPostPhys.8.2.026},
+  url       = {https://scipost.org/10.21468/SciPostPhys.8.2.026}
+}
+
 @article{10.3389/fdata.2025.1497622,
   author  = {Reinsvold Hall, Allison  and Skidmore, Nicole  and Benelli, Gabriele  and Carlson, Ben  and David, Claire  and Davies, Jonathan  and Deconinck, Wouter  and DeMuth, David  and Elmer, Peter  and Garg, Rocky Bala  and Hageböck, Stephan  and Lieret, Killian  and Lukashenko, Valeriia  and Malik, Sudhir  and Morris, Andy  and Schellman, Heidi  and Stewart, Graeme A.  and Veatch, Jason  and Hernandez Villanueva, Michel },
   title   = {Training and onboarding initiatives in high energy physics experiments},
@@ -224,6 +236,21 @@
   volume        = {07},
   pages         = {079},
   year          = {2014}
+}
+
+@article{ALWALL2007300,
+  title    = {A standard format for Les Houches Event Files},
+  journal  = {Computer Physics Communications},
+  volume   = {176},
+  number   = {4},
+  pages    = {300-304},
+  year     = {2007},
+  issn     = {0010-4655},
+  doi      = {https://doi.org/10.1016/j.cpc.2006.11.010},
+  url      = {https://www.sciencedirect.com/science/article/pii/S0010465506004164},
+  author   = {J. Alwall and A. Ballestrero and P. Bartalini and S. Belov and E. Boos and A. Buckley and J.M. Butterworth and L. Dudko and S. Frixione and L. Garren and S. Gieseke and A. Gusev and I. Hinchliffe and J. Huston and B. Kersevan and F. Krauss and N. Lavesson and L. Lönnblad and E. Maina and F. Maltoni and M.L. Mangano and F. Moortgat and S. Mrenna and C.G. Papadopoulos and R. Pittau and P. Richardson and M.H. Seymour and A. Sherstnev and T. Sjöstrand and P. Skands and S.R. Slabospitsky and Z. Wa̧s and B.R. Webber and M. Worek and D. Zeppenfeld},
+  keywords = {Event generators, Les Houches Accord, File format},
+  abstract = {A standard file format is proposed to store process and event information, primarily output from parton-level event generators for further use by general-purpose ones. The information content is identical with what was already defined by the Les Houches Accord five years ago, but then in terms of Fortran commonblocks. This information is embedded in a minimal XML-style structure, for clarity and to simplify parsing.}
 }
 
 @article{Amadio_2023,
@@ -400,6 +427,45 @@
   year          = {2024}
 }
 
+@article{Buckley2015LHAPDF,
+  author   = {Buckley, Andy
+              and Ferrando, James
+              and Lloyd, Stephen
+              and Nordstr{\"o}m, Karl
+              and Page, Ben
+              and R{\"u}fenacht, Martin
+              and Sch{\"o}nherr, Marek
+              and Watt, Graeme},
+  title    = {LHAPDF6: parton density access in the LHC precision era},
+  journal  = {The European Physical Journal C},
+  year     = {2015},
+  month    = mar,
+  day      = {20},
+  volume   = {75},
+  number   = {3},
+  pages    = {132},
+  abstract = {The Fortran LHAPDF library has been a long-term workhorse in particle physics, providing standardised access to parton density functions for experimental and phenomenological purposes alike, following on from the venerable PDFLIB package. During Run 1 of the LHC, however, several fundamental limitations in LHAPDF's design have became deeply problematic, restricting the usability of the library for important physics-study procedures and providing dangerous avenues by which to silently obtain incorrect results. In this paper we present the LHAPDF 6 library, a ground-up re-engineering of the PDFLIB/LHAPDF paradigm for PDF access which removes all limits on use of concurrent PDF sets, massively reduces static memory requirements, offers improved CPU performance, and fixes fundamental bugs in multi-set access to PDF metadata. The new design, restricted for now to interpolated PDFs, uses centralised numerical routines and a powerful cascading metadata system to decouple software releases from provision of new PDF data and allow completely general parton content. More than 200 PDF sets have been migrated from LHAPDF 5 to the new universal data format, via a stringent quality control procedure. LHAPDF 6 is supported by many Monte Carlo generators and other physics programs, in some cases via a full set of compatibility routines, and is recommended for the demanding PDF access needs of LHC Run 2 and beyond.},
+  issn     = {1434-6052},
+  doi      = {10.1140/epjc/s10052-015-3318-8},
+  url      = {https://doi.org/10.1140/epjc/s10052-015-3318-8}
+}
+
+@article{BUCKLEY2021107310,
+  title    = {The HepMC3 event record library for Monte Carlo event generators},
+  journal  = {Computer Physics Communications},
+  volume   = {260},
+  pages    = {107310},
+  year     = {2021},
+  issn     = {0010-4655},
+  doi      = {https://doi.org/10.1016/j.cpc.2020.107310},
+  url      = {https://www.sciencedirect.com/science/article/pii/S0010465520301181},
+  author   = {Andy Buckley and Philip Ilten and Dmitri Konstantinov and Leif Lönnblad and James Monk and Witold Pokorski and Tomasz Przedzinski and Andrii Verbytskyi},
+  keywords = {Event generator, Event record, Monte Carlo, MCEG, Particle physics, Collider experiments},
+  abstract = {In high-energy physics, Monte Carlo event generators (MCEGs) are used to simulate the interactions of high energy particles. MCEG event records store the information on the simulated particles and their relationships, and thus reflect the simulated evolution of physics phenomena in each collision event. We present the HepMC3 library, a next-generation framework for MCEG event record encoding and manipulation, which builds on the functionality of its widely-used predecessors to enable more sophisticated algorithms for event-record analysis. As compared to previous versions, the event record structure has been simplified, while adding the possibility to encode arbitrary information. The I/O functionality has been extended to support common input and output formats of various HEP MCEGs, including formats used in Fortran MCEGs, the formats established by the HepMC2 library, and binary formats such as ROOT; custom input or output handlers may also be used. HepMC3 is already supported by popular modern MCEGs and can replace the older HepMC versions in many others.
+              Program summary
+              Program Title: HepMC3 Program Files doi: http://dx.doi.org/10.17632/6fpf82rp8b.1 Licensing provisions: GPLv3 Programming language: C++ Nature of problem: The simulation of elementary particle reactions at high energies requires to store and/or modify information related to the simulation. Solution method: Provide a library that allows for manipulation and storage of information that origins from in the simulations of elementary particle reactions at high energies and can be interfaced to the modern Monte Carlo event generator software as well as to the particle detector simulation programs.}
+}
+
 @misc{campbell2024eg,
   title         = {Event Generators for High-Energy Physics Experiments},
   author        = {J. M. Campbell and M. Diefenthaler and T. J. Hobbs and S. Höche and J. Isaacson and F. Kling and S. Mrenna and J. Reuter and S. Alioli and J. R. Andersen and C. Andreopoulos and A. M. Ankowski and E. C. Aschenauer and A. Ashkenazi and M. D. Baker and J. L. Barrow and M. van Beekveld and G. Bewick and S. Bhattacharya and C. Bierlich and E. Bothmann and P. Bredt and A. Broggio and A. Buckley and A. Butter and J. M. Butterworth and E. P. Byrne and C. M. Carloni Calame and S. Chakraborty and X. Chen and M. Chiesa and J. T. Childers and J. Cruz-Martinez and J. Currie and N. Darvishi and M. Dasgupta and A. Denner and F. A. Dreyer and S. Dytman and B. K. El-Menoufi and T. Engel and S. Ferrario Ravasio and D. Figueroa and L. Flower and J. R. Forshaw and R. Frederix and A. Friedland and S. Frixione and H. Gallagher and K. Gallmeister and S. Gardiner and R. Gauld and J. Gaunt and A. Gavardi and T. Gehrmann and A. Gehrmann-De Ridder and L. Gellersen and W. Giele and S. Gieseke and F. Giuli and E. W. N. Glover and M. Grazzini and A. Grohsjean and C. Gütschow and K. Hamilton and T. Han and R. Hatcher and G. Heinrich and I. Helenius and O. Hen and V. Hirschi and M. Höfer and J. Holguin and A. Huss and P. Ilten and S. Jadach and A. Jentsch and S. P. Jones and W. Ju and S. Kallweit and A. Karlberg and T. Katori and M. Kerner and W. Kilian and M. M. Kirchgaeßer and S. Klein and M. Knobbe and C. Krause and F. Krauss and J. Lang and J. -N. Lang and G. Lee and S. W. Li and M. A. Lim and J. M. Lindert and D. Lombardi and L. Lönnblad and M. Löschner and N. Lurkin and Y. Ma and P. Machado and V. Magerya and A. Maier and I. Majer and F. Maltoni and M. Marcoli and G. Marinelli and M. R. Masouminia and P. Mastrolia and O. Mattelaer and J. Mazzitelli and J. McFayden and R. Medves and P. Meinzinger and J. Mo and P. F. Monni and G. Montagna and T. Morgan and U. Mosel and B. Nachman and P. Nadolsky and R. Nagar and Z. Nagy and D. Napoletano and P. Nason and T. Neumann and L. J. Nevay and O. Nicrosini and J. Niehues and K. Niewczas and T. Ohl and G. Ossola and V. Pandey and A. Papadopoulou and A. Papaefstathiou and G. Paz and M. Pellen and G. Pelliccioli and T. Peraro and F. Piccinini and L. Pickering and J. Pires and W. Płaczek and S. Plätzer and T. Plehn and S. Pozzorini and S. Prestel and C. T. Preuss and A. C. Price and S. Quackenbush and E. Re and D. Reichelt and L. Reina and C. Reuschle and P. Richardson and M. Rocco and N. Rocco and M. Roda and A. Rodriguez Garcia and S. Roiser and J. Rojo and L. Rottoli and G. P. Salam and M. Schönherr and S. Schuchmann and S. Schumann and R. Schürmann and L. Scyboz and M. H. Seymour and F. Siegert and A. Signer and G. Singh Chahal and A. Siódmok and T. Sjöstrand and P. Skands and J. M. Smillie and J. T. Sobczyk and D. Soldin and D. E. Soper and A. Soto-Ontoso and G. Soyez and G. Stagnitto and J. Tena-Vidal and O. Tomalak and F. Tramontano and S. Trojanowski and Z. Tu and S. Uccirati and T. Ullrich and Y. Ulrich and M. Utheim and A. Valassi and A. Verbytskyi and R. Verheyen and M. Wagman and D. Walker and B. R. Webber and L. Weinstein and O. White and J. Whitehead and M. Wiesemann and C. Wilkinson and C. Williams and R. Winterhalder and C. Wret and K. Xie and T-Z. Yang and E. Yazgan and G. Zanderighi and S. Zanoli and K. Zapp},
@@ -443,7 +509,7 @@
   title = {CERN OpenLab Software Workshops},
   url   = {https://indico.cern.ch/category/3169/}
 }
-
+  
 @article{Chen_2022,
   author  = {Chen, Yifan  and  Huerta, E. A.  and  Duarte, Javier  and  Harris, Philip  and  Katz, Daniel S.  and  Neubauer, Mark S.  and  Diaz, Daniel  and  Mokhtar, Farouk  and  Kansal, Raghav  and  Park, Sang Eon  and  Kindratenko, Volodymyr V.  and  Zhao, Zhizhen  and  Rusack, Roger},
   title   = {A FAIR and AI-ready Higgs boson decay dataset},
@@ -455,17 +521,17 @@
   doi     = {10.1038/s41597-021-01109-0},
   url     = {https://doi.org/10.1038/s41597-021-01109-0}
 }
-
+  
 @online{CHEP2024:adept_gpu_em_transport,
   title = {AdePT - Enabling GPU electromagnetic transport with Geant4},
   url   = {https://indi.to/k3jCM}
 }
-  
+
 @online{CHEP2024:celeritas_improvements,
   title = {Accelerating detector simulations with Celeritas: performance improvements and new capabilities},
   url   = {https://indi.to/JtRK9}
 }
-  
+
 @article{CMS-DP-2022-050,
   collaboration = {CMS},
   author        = {{CMS Collaboration}},
@@ -635,7 +701,6 @@
   pages         = {P07027},
   year          = {2018}
 }
-
 @article{Duarte:2022job,
   author        = {Duarte, Javier and others},
   title         = {{FAIR AI models in high energy physics}},
@@ -656,6 +721,7 @@
   title  = {ECFA Higgs/Electroweak/Top Factory Study},
   year   = 2025
 }
+
 @techreport{European:2720131,
   author       = {The European Strategy Group},
   title        = {{Deliberation document on the 2020 Update of the European
@@ -789,7 +855,6 @@
   year  = 2024,
   url   = {https://indico.cern.ch/event/1475445/}
 }
-
 @article{Ganis2022,
   author  = {Ganis, Gerardo and Helsens, Cl{\'e}ment and V{\"o}lkl, Valentin},
   title   = {Key4hep, a framework for future HEP experiments and its use in FCC},
@@ -814,6 +879,7 @@
   primaryclass  = {hep-ph},
   url           = {https://arxiv.org/abs/2310.13211}
 }
+
 @online{garfield++,
   title = {Garfield++ toolkit},
   url   = {https://garfieldpp.web.cern.ch/garfieldpp/}
@@ -948,7 +1014,6 @@
   title = {IRIS-HEP Training, Education and Outreach},
   url   = {https://iris-hep.org/ssc.html}
 }
-
 @article{Jadach:1991by,
   author       = {Jadach, S. and Richter-Was, E. and Ward, B. F. L. and Was,
                   Z.},
@@ -975,6 +1040,8 @@
   pages         = {260-\/-325},
   year          = {2000}
 }
+
+
 @article{Jadach:2022mbe,
   author        = {Jadach, S. and Ward, B. F. L. and Wa̧s, Z. and Yost, S. A. and
                    Siodmok, A.},
@@ -1007,7 +1074,6 @@
   year          = {2011}
 }
 
-
 @misc{kim2021innmethodidentifyingcleanannotated,
   title         = {INN: A Method Identifying Clean-annotated Samples via
                    Consistency Effect in Deep Neural Networks},
@@ -1036,7 +1102,6 @@
   pages         = {026},
   year          = {2022}
 }
-
 @article{LHCb:GPU_GNN,
   doi       = {10.1088/1748-0221/19/12/P12022},
   url       = {https://dx.doi.org/10.1088/1748-0221/19/12/P12022},
@@ -1069,6 +1134,7 @@
   pages         = {1},
   year          = {2022}
 }
+
 @article{LHCb:Lipschitz,
   author        = {O. Kitouni, N. Nolte and M. Williams},
   collaboration = {LHCb},
@@ -1111,6 +1177,21 @@
   editor    = {De Vita, R. and Espinal, X. and Laycock, P. and Shadura, O.},
   year      = {2024},
   pages     = {05012}
+}
+
+@article{Maguire_2017,
+  doi       = {10.1088/1742-6596/898/10/102006},
+  url       = {https://dx.doi.org/10.1088/1742-6596/898/10/102006},
+  year      = {2017},
+  month     = oct,
+  publisher = {IOP Publishing},
+  volume    = {898},
+  number    = {10},
+  pages     = {102006},
+  author    = {Maguire, Eamonn and Heinrich, Lukas and Watt, Graeme},
+  title     = {HEPData: a repository for high energy physics data},
+  journal   = {Journal of Physics: Conference Series},
+  abstract  = {The Durham High Energy Physics Database (HEPData) has been built up over the past four decades as a unique open-access repository for scattering data from experimental particle physics papers. It comprises data points underlying several thousand publications. Over the last two years, the HEPData software has been completely rewritten using modern computing technologies as an overlay on the Invenio v3 digital library framework. The software is open source with the new site available at https://hepdata.net now replacing the previous site at http://hepdata.cedar.ac.uk. In this write-up, we describe the development of the new site and explain some of the advantages it offers over the previous platform.}
 }
 
 @article{Malik:2919564,
@@ -1366,7 +1447,7 @@
   volume  = {C980914},
   pages   = {127-131},
   year    = {1998},
-  url     = {https://cds.cern.ch/record/382453/files/ps-99-014.pdf},
+  url     = {https://cds.cern.ch/record/382453/files/ps-99-014.pdf}
 }
 
 @article{Sherpa:2019gpd,
