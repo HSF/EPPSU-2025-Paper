@@ -97,6 +97,12 @@ challenges in terms of career paths and funding opportunities, and it is
 imperative that the particle physics community addresses such issues to ensure a
 sustainable development of MCEGs for existing and future facilities.
 
+As well as the MCEGs themselves, there is a critical ecosystem of tools to
+exchange data with other software, HepMC3~\cite{BUCKLEY2021107310} and
+LHE~\cite{ALWALL2007300} in particular; as well as data access via, e.g.,
+LHAPDF~\cite{Buckley2015LHAPDF} and HEPData~\cite{Maguire_2017}. Long term,
+adequate support for these infrastructure tools is vital.
+
 \subsection{Large Hadron Collider}\label{large-hadron-collider}
 
 The unprecedented precision in measuring the mass of the $\mathrm{W}$
@@ -115,7 +121,7 @@ generation}\label{reduction-of-negative-weights-in-event-generation}
 Events with negative weights can occur in MC schemes that include
 $\mathrm{N}^\mathrm{n}\mathrm{LO}$ corrections to cross sections and can
 significantly dilute the statistical power of a sample. This statistical loss is
-most significant events have to be propagated through the downstream steps,
+most significant for events have to be propagated through the downstream steps,
 which are computationally expensive. Positive resampling~\cite{Andersen:2020sjs}
 and cell resampling methods~\cite{Andersen:2021mvw} have been developed by the
 generator theory community -- these methods redistribute weights, without
@@ -270,6 +276,8 @@ recommendations are made:
   Ensure support for the neutrino event generators, with their specific
   needs, and encourage as much sharing as possible with the other
   communities.
+\item 
+  Provide sufficient long term support for MCEG infrastructure codes.
 \end{enumerate}
 
 \section{Detector Simulation}\label{detector-simulation}
@@ -292,8 +300,8 @@ developments~\cite{g4inputs} are the implementation of more detailed EM models
 and rarer processes, the inclusion of low energy nuclear physics effects, and
 the continued tuning of string models. The
 FLUKA.CERN~\cite{FLUKA:new_capabiliies, battistoni_2024_stv3r-7ar12} hadronic
-physics codes have been made available as an option in Geant4, and use of MC
-generator codes for hadron interaction and decay processes is being explored.
+physics code have been made available as an option in Geant4, and use of MC
+generator code for hadron interaction and decay processes is being explored.
 The validation of Geant4 physics against thin and thick target experimental data
 for each release is essential. FLUKA.CERN itself, which is being modernised to
 C++, remains critical for radiation transport and shielding calculations.
@@ -328,7 +336,7 @@ CPUs~\cite{CHEP2024:celeritas_improvements, CHEP2024:adept_gpu_em_transport},
 while simulating hadronic physics and
 processing experiment-specific energy deposits on CPUs. Bottlenecks,
 particularly in the geometry, have been identified that are being addressed by a
-new surface geometry approach. Further work is needed to integrate GPU-based
+new surface geometry approach. Further work is needed to completely integrate GPU-based
 simulation modules into experiment software frameworks, but the goal of using
 GPUs for MC datasets for the major LHC experiments by the start of Run 4 appears
 within reach. The other leading candidate for GPU simulation is the simulation
@@ -439,28 +447,28 @@ baseline for low mass exotic particle resonance searches.
 The need for faster reconstruction and data processing algorithms is being
 widely addressed by ML and AI algorithms. AI tools are already used extensively
 in HEP offline software and are increasingly found in online software as well as
-hardware DAQ systems. For example, ATLAS uses, and continuously improves, graph
-neural networks based heavy flavour jet and tau identification in its high-level
-trigger (HLT)\cite{ATLAS:perf_commissioning} in Run 3.
+hardware DAQ systems. For example, ATLAS uses, and continuously improves, transformer 
+neural network based heavy flavour jet and tau identification in its high-level
+trigger (HLT)~\cite{ATLAS:perf_commissioning} in Run 3.
 CMS deployed a variational autoencoder based on
 an anomaly detection demonstrator in their Level-1 trigger in 2023~\cite{CMS-DP-2023-079},
 making use of HLS4ML~\cite{fastml_team_hls4ml}, a HEP community-driven
 software package for high-level synthesis of ML algorithms for FPGAs. In Run 3,
 LHCb has deployed monotonic Lipschitz networks at the HLT
 stage~\cite{LHCb:Lipschitz} to select heavy-flavour-quark decays in an efficient
-and robust way, as well as adding neural network models to their GPU HLT1 to
+and robust way, as well as adding neural network models to their HLT to
 improve track purity~\cite{neuralmodelHLT1LHCb}.
 
 Many experiments have recognised the compute intensive need for tracking
 capabilities in the trigger for improved event selection. Since Run 3, LHCb
-reconstructs tracks on GPU at the LHC bunch crossing rate, identifying quality
-particle candidates for offline analysis for every event~\cite{LHCb:HLT}, thus
-avoiding hardware-based first level trigger selections impacting its primary
+reconstructs tracks on GPUs at the LHC bunch crossing rate, identifying quality
+particle candidates for offline analysis for every event~\cite{LHCb:HLT}. This
+avoided hardware-based first level trigger selections impacting its primary
 physics programme, such as measurements for CP violations in heavy flavoured
-hadron decays. Since Run 3, CMS is running on GPUs the track reconstruction
-based on the pixel detector data and is now poised to make a big advance at the
-HL-LHC by running tracking for particle flow reconstruction in a hardware-based
-first level trigger. The next important advancement will be 4D reconstruction,
+hadron decays. Also from Run 3, CMS runs track reconstruction on GPUs based on the
+pixel detector data and will make a big advance at the HL-LHC
+by running tracking for particle flow reconstruction in a hardware-based
+first level trigger. The next important advancement will be 4D reconstruction:
 track reconstruction with the use of hit time information. This will be
 applicable at the HL-LHC and to future hadron, electron-positron, and deep
 inelastic scattering collider facilities for background mitigation. The tracking
@@ -472,11 +480,11 @@ demonstrator project for GPU-based tracking.
 
 However, the rapidly evolving software landscape in HEP is highlighting a
 struggle to keep physicists sufficiently trained to contribute to reconstruction
-and trigger software in a useful way (e.g., C++ knowledge is hard to come by,
-these days). There is a growing need for a dedicated group of software and
+and trigger software in a useful way (e.g., C++ expertise is increasingly hard to find). 
+There is a growing need for a dedicated group of software and
 physics professionals working together. Proper software engineering leads to
-immense benefits and is a foundation for analysis preservation, as well as
-efficient and reliable, hence more sustainable, computing.
+immense benefits and is a foundation for software sustainability, as well as
+efficient and reliable, hence more environmentally sustainable, computing.
 
 The community has identified several key themes in reconstruction and software
 triggers that need to be intensively explored in the next decade to achieve our
@@ -487,7 +495,7 @@ efforts in the proposed fields will broadly benefit future HEP programmes.
 software}\label{enhanced-heterogeneous-computing-software}
 
 Utilising heterogeneous architectures, such as GPUs and FPGAs, appears
-inevitable in several different areas. One of the main challenges is
+inevitable in several different areas, yet one of the main challenges is
 anticipating the technological landscape in 5-10 years. While GPUs are one of
 the most promising accelerators, alternative accelerator and processor
 technologies, such as RISC-V, IPUs and AI-processors, are evolving rapidly and
@@ -538,7 +546,7 @@ Dedicated funding is essential to achieve this. Proper software engineering and
 common tools for continuous integration and automation of quality assurance
 tasks will ultimately conserve resources, as will identifying key software
 developments that are widely applicable. Common software can be more robustly
-tested and validated, with the benefits shared by many. This will foster an
+tested and validated, with the benefits shared by many. This will foster a
 sustainable software environment and at the same time increase computing
 efficiency to improve physics reach.
 
@@ -609,7 +617,7 @@ interoperable data structures for all stages of analysis. The ROOT RNTuple data
 serialisation interface, replacing the TTree interface, has a clear
 specification as well as significant enhancements in support for multithreading
 and asynchronous I/O~\cite{ROOT:RDataFrame_prod_path}. The
-HEP Statistics serialisation Standard (HS3) aims to provide a common, framework
+HEP Statistics Serialisation Standard (HS3) aims to provide a common, framework
 agnostic serialised description of the components involved in fitting
 statistical models (models, datasets, likelihoods,
 etc.)~\cite{HS3github}.
@@ -662,6 +670,9 @@ platform~\cite{REANA} extends this to provide a data analysis platform from
 which to develop reusable analyses. Increased functionality and user uptake of
 CI/CD systems provides tooling to ensure the integrity and reliability of
 analyses and software alike.
+
+Reinterpretation of results is helped greatly by this approach and is itself
+supported by important tools such as Rivet~\cite{10.21468/SciPostPhys.8.2.026}.
 
 \subsection{Analysis facilities and data analysis at
 scale}\label{analysis-facilities-and-data-analysis-at-scale}
@@ -734,8 +745,9 @@ scale of training activities match the number of incoming students each year.
 New opportunities, such as using Large Language Models, need to be investigated.
 Training scope and curriculum must evolve to meet the needs of the community.
 New instructors and materials developers recruited and trained continuously to
-sustain a long-term effort. Commitments from major HEP labs and experiments are
-required and they should see value and invest in workforce training. Diversity
+sustain a long-term effort. 
+Commitments from major HEP labs and experiments to workforce training bring significant value. 
+Diversity
 and inclusion should be a guiding principle to develop the workforce pipeline
 and should engage the broader community that it represents.
 
