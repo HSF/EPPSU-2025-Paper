@@ -122,7 +122,7 @@ Events with negative weights can occur in MC schemes that include
 higher order (next-to-leading order, NLO; next-to-next-to-leading order, NNLO; and beyond)
 corrections to cross sections and can
 significantly dilute the statistical power of a sample. This statistical loss is
-most significant for events have to be propagated through the downstream steps,
+most significant for events that have to be propagated through the downstream steps,
 which are computationally expensive. Positive resampling~\cite{Andersen:2020sjs}
 and cell resampling methods~\cite{Andersen:2021mvw} have been developed by the
 generator theory community -- these methods redistribute weights, without
@@ -139,7 +139,7 @@ higher order MCEG computations, can be offloaded to GPUs. The first benchmarking
 of the gains from using the GPU version of
 Madgraph~\cite{Alwall:2014hca, Hageboeck:2023blb, Valassi:2022dkc, Wettersten:2023ekm}
 for leading-order calculations was
-performed by the CMS Collaboration~\cite{CMS-DP-2024-086}) and showed
+performed by the CMS Collaboration~\cite{CMS-DP-2024-086} and showed
 improvement up to $\times 7$ in event generation time. The PEPPER (Portable
 Engine for the Production of Parton-level Event Records)~\cite{Bothmann:2023gew}
 event generator, developed by the Sherpa generator team~\cite{Sherpa:2019gpd}
@@ -353,7 +353,9 @@ techniques have been developed and used in the experiments' Monte Carlo
 production. Parametrised and generative machine learning (ML) approaches for
 calorimeter shower simulations are used (e.g., \cite{af3}), or planned to be
 used, in a substantial fraction of Monte Carlo production by ATLAS, CMS, and
-LHCb. The use of fast simulation is expected to increase in the next few years,
+LHCb. Generative adversarial networks for the generation of background are also
+already developed and planned to be used in Belle II. The use of fast simulation
+is expected to increase in the next few years,
 with more applications transitioning from R\&D to production. More sophisticated
 ML methods, e.g., INN~\cite{kim2021innmethodidentifyingcleanannotated},
 CFM~\cite{tong2024improvinggeneralizingflowbasedgenerative} are being explored.
@@ -388,8 +390,8 @@ and CMS.
 \subsection{Future Experiments}\label{future-experiments}
 
 The simulation requirements for the design of future detectors are very
-different from those of the running experiments. Large samples are not
-usually required and it is important to be able to simulate many
+different from those of the running experiments. While large samples are not
+usually required, it is important to be able to simulate many
 different design variations, so flexibility and ease of use are
 essential. Studies for detectors at proposed future colliders are using
 the common Key4hep~\cite{Ganis2022} framework. Gaseous detector R\&D relies
@@ -397,7 +399,7 @@ heavily on Garfield++\cite{garfield++} for detailed modelling of signal
 formation. Long term support of these tools is critical.
 
 The FCC-ee experiments should collect datasets similar or
-larger size than that of HL-LHC experiments. They will perform precision
+larger in size than that of HL-LHC experiments. They will perform precision
 measurements in a cleaner environment than hadron colliders, so simulation
 needs to be at least as fast, but also more accurate than for the HL-LHC. The
 Muon Collider must handle a large background from beam muon decays, which
@@ -782,7 +784,7 @@ scientific accomplishments.
 \def\labelenumi{\arabic{enumi}.}
 \item
   Create training-the-workforce funding opportunities to engage
-  students, postdocs who can be mentors, tutors and tutors for the
+  students, postdocs who can be mentors and tutors for the
   training programmes.
 \item
   Align software training efforts with other research software bodies to
