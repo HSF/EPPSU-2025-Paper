@@ -437,7 +437,8 @@ Triggers}\label{reconstruction-and-software-triggers}
 LHCb~\cite{LHCb:RTDP} and CMS~\cite{CMS:Detector_R3}
 are now successfully operating GPU farms for their
 Run 3 software trigger systems and ALICE~\cite{ALICE:LS2_upgrades} uses such a farm for
-the calibration of the detectors and the compression of the real data. This
+synchronous reconstruction,
+online calibration of detectors and compression of the real data. This
 effort has produced impressive, sustainable production software providing
 speed-ups, portability and vendor
 independence~\cite{Concas:2024cyu, Aaij2020Allen,MathesP3MA2017}. The
@@ -470,7 +471,7 @@ Many experiments have recognised the compute intensive need for tracking
 capabilities in the trigger for improved event selection. Since Run 3, LHCb
 reconstructs tracks on GPUs at the LHC bunch crossing rate, identifying quality
 particle candidates for offline analysis for every event~\cite{LHCb:HLT}. This
-avoided hardware-based first level trigger selections impacting its primary
+avoided hardware-based first level trigger selections impacting its
 physics programme, such as measurements for CP violations in heavy flavoured
 hadron decays. Also from Run 3, CMS runs track reconstruction on GPUs based on the
 pixel detector data and will make a big advance at the HL-LHC
@@ -512,7 +513,8 @@ architectures, without being tied to a specific hardware vendor.
 
 \subsection{Real-time analysis}\label{real-time-analysis}
 
-Future online data acquisition software in HEP and NP trends towards operating
+Beginning with Run 3 ALICE has been operating triggerless continuous readout,
+and future online data acquisition software in HEP and NP trends towards operating
 triggerless or streaming readouts, to avoid online event selections that would
 limit primary physics goals. As rates increase, these techniques move closer
 to the detector, hosted on less flexible systems, which requires very careful
@@ -540,7 +542,7 @@ Many HEP experiments are planning, or incorporating, precise timing
 ($\mathcal{O}(\mathrm{ps})$) detectors, in order to maintain performance in
 ultra-high density environments (e.g., at Belle-II and HL-LHC). For the HL-LHC
 and future colliders, reconstruction techniques that use hit level timing
-(a.k.a.~4D reconstruction) can much more efficiently distinguish signal from
+(4D reconstruction) can much more efficiently distinguish signal from
 background. Adapting reconstruction algorithms to keep pace with evolving sensor
 and detector R\&D is a significant challenge and requires community effort.
 
