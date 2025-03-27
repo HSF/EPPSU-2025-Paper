@@ -32,7 +32,9 @@ EXIT_STATUS_FAILURE = 5
 
 # Default input files
 AUTHOR_FILE_DEFAULT = "authors.csv"
+ARXIV_AUTHOR_FILE_DEFAULT = "hep-eppsu-software-authors.arxiv"
 LATEX_AUTHOR_FILE_DEFAULT = "hep-eppsu-software-authors.tex"
+ARXIV_AUTHORS_PREFIX_DEFAULT= "HEP Software Foundation: "
 
 # Miscellaneous constants
 AFFILIATION_USE_LETTERS = True
@@ -135,6 +137,10 @@ def main():
 
     try:
         parser = argparse.ArgumentParser()
+        parser.add_argument('--arxiv-output', dest='arxiv_output_file', default=ARXIV_AUTHOR_FILE_DEFAULT,
+                            help='Output Arxiv author file (D: {})'.format(ARXIV_AUTHOR_FILE_DEFAULT))
+        parser.add_argument('--arxiv-authors-prefix', dest='arxiv_authors_prefix', default=ARXIV_AUTHORS_PREFIX_DEFAULT,
+                            help=f'Prefix for Arxiv authors list: {ARXIV_AUTHORS_PREFIX_DEFAULT}')
         parser.add_argument('--authors-csv', dest='authors', default=AUTHOR_FILE_DEFAULT,
                             help='CSV file containining author list (D: {})'.format(AUTHOR_FILE_DEFAULT))
         parser.add_argument('--more-authors', action='store_true', default=False, help='Add a last entry mentioning more authors are coming')
@@ -186,6 +192,11 @@ def main():
 
         for affiliation in affiliation_list._list:
             latex_fh.write(f"\\affiliation[{affiliation_list.get_id(affiliation)}]{{{affiliation}}}\n")
+
+    # Write out the author list to copy into the arXiv author file
+    with open(options.arxiv_output_file, "w", encoding="utf-8") as arxivoutput:
+        print(f"{ARXIV_AUTHORS_PREFIX_DEFAULT}{', '.join([author.name for author in author_list])}",
+              file=arxivoutput)
 
 
 if __name__ == '__main__':
