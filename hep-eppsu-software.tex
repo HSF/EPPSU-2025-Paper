@@ -30,6 +30,12 @@
 % Endorsers
 \input{hep-eppsu-software-endorsers}
 
+% Glossary entries
+\usepackage[nonumberlist]{glossaries}
+\setacronymstyle{long-short}
+\makeglossaries
+\input{hep-eppsu-software-glossary}
+
 % Comment out before final submission
 \usepackage{lineno}  % for line numbering during review
 % \linenumbers
@@ -43,6 +49,8 @@
 
 \maketitle
 
+\tableofcontents
+
 % Start the main document on a new page
 
 \newpage
@@ -55,7 +63,7 @@ Particle physics has an ambitious and broad global experimental programme for
 the coming decades. Large investments in building new facilities are already
 underway or under consideration. Scaling the present processing power and data
 storage needs by the foreseen increase in data rates in the next decade for
-HL-LHC is not sustainable within the current
+\gls{HL-LHC} is not sustainable within the current
 budgets~\cite{CERN-LHCC-2022-005,Software:2815292}. As a result, a more
 efficient usage of computing resources is required in order to realise the
 physics potential of future experiments. Software and computing are an integral
@@ -75,7 +83,7 @@ parts of our data processing chain.
 
 \section{Physics Event Generators}\label{physics-event-generators}
 
-Monte Carlo Event Generators (MCEGs) that simulate particle collisions,
+Monte Carlo Event Generators (\glspl{mpeg}) that simulate particle collisions,
 or `events', to a level that allows direct comparison with
 experimental data, are indispensable for the planning and analysis of
 all particle physics experiments. MCEGs are vital to connect
@@ -826,6 +834,10 @@ is the key message for the future.
 \section{Acknowledgements}
 
 The editors would like to thank the many people from the HEP community who provided input to this document and made possible this summary on the software and computing challenges faced by HEP experiments. We also thank the many projects and organisations that have provided funding to several colleagues, making possible their contributions. In particular the U.S. National Science Foundation (NSF) Cooperative Agreement PHY-2323298 (IRIS-HEP); the OpenMAPP project, via National Science Centre, Poland under CHIST-ERA programme (NCN 2022/04/Y/ST2/00186); Brookhaven National Laboratory, a U.S. Department of Energy, Office of Science facility; Fermi National Accelerator Laboratory (Fermilab), a U.S. Department of Energy, Office of Science, Office of High Energy Physics HEP User Facility (Fermilab is managed by FermiForward Discovery Group, LLC, acting under Contract No. 89243024CSC000002).
+
+\clearpage
+
+\printglossaries
 
 \newpage
 \sloppy
